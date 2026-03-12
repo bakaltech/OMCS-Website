@@ -3,55 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OMCS – Contact Us</title>
+  <title>OMCS – Home</title>
+  <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .form-input:focus {
-      border-color: #C9A34B;
-      box-shadow: 0 0 0 3px rgba(201, 163, 75, 0.2);
-      outline: none;
-    }
-    .map-container iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .bg-pattern {
-      background-image: radial-gradient(rgba(201, 163, 75, 0.05) 1px, transparent 1px);
-      background-size: 30px 30px;
-    }
-    .form-card {
-      position: relative;
-      overflow: hidden;
-    }
-    .form-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: linear-gradient(90deg, #C9A34B, #0B4D3C, #C9A34B);
-    }
-    .commitment-card {
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
       transition: all 0.3s ease;
     }
-    .commitment-card:hover {
-      transform: translateY(-2px);
-      background-color: #fefcf8;
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
     }
-    .icon {
-      width: 1.75rem;
-      height: 1.75rem;
-      color: #C9A34B;
-      flex-shrink: 0;
+    .stat-card {
+      background: #FEFCF8;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border-top: 4px solid #C9A34B;
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: #0B4D3C;
+      line-height: 1.2;
+    }
+    @media (min-width: 768px) {
+      .stat-number {
+        font-size: 3.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .stat-number {
+        font-size: 4rem;
+      }
+    }
+    .hero-bg {
+      will-change: transform;
+    }
+    /* Carousel styles */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .carousel-track {
+      animation: scroll 40s linear infinite;
+      width: fit-content;
+      display: flex;
+      gap: 2rem;
+    }
+    .carousel-container:hover .carousel-track {
+      animation-play-state: paused;
+    }
+    .partner-card {
+      flex: 0 0 160px;
+      height: 80px;
+      background: #FEFCF8;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      border: 1px solid rgba(201, 163, 75, 0.3);
+      text-decoration: none;
+      color: #2D2A24;
+      font-weight: 600;
+      padding: 0 1rem;
+    }
+    .partner-card:hover {
+      background-color: #C9A34B;
+      border-color: #C9A34B;
+      color: white;
+    }
+    .partner-card img {
+      max-height: 40px;
+      max-width: 120px;
+      object-fit: contain;
+    }
+    .partner-card span {
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    .team-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #C9A34B;
+      margin: 0 auto 1rem;
+    }
+    .bio-text {
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .bio-text::-webkit-scrollbar {
+      width: 4px;
+    }
+    .bio-text::-webkit-scrollbar-track {
+      background: #E2D9CE;
+    }
+    .bio-text::-webkit-scrollbar-thumb {
+      background: #C9A34B;
+      border-radius: 4px;
     }
   </style>
 </head>
-<body class="bg-pattern">
-  <!-- Navbar (with Get Help) -->
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar (same as other pages) -->
   <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
       <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
@@ -63,171 +141,347 @@
         <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
         <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
         <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
-        <a href="contact.html" class="text-[#C9A34B] font-semibold">Contact</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
       </div>
       <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
     </div>
   </nav>
 
   <main>
-    <!-- Page Header -->
-    <section class="bg-[#0B4D3C] text-white py-20 relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10">
-        <svg viewBox="0 0 1440 320" class="absolute bottom-0 w-full h-auto">
-          <path fill="#C9A34B" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,213.3C384,213,480,203,576,176C672,149,768,107,864,101.3C960,96,1056,128,1152,138.7C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
+    <!-- Hero Section with Video Background -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 w-full h-full hero-bg">
+        <video autoplay loop muted playsinline class="w-full h-full object-cover">
+          <source src="https://videos.pexels.com/video-files/3195398/3195398-uhd_2732_1440_25fps.mp4" type="video/mp4">
+        </video>
       </div>
-      <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">Get in Touch</h1>
-        <p class="text-xl max-w-2xl mx-auto text-white/80">We'd love to hear from you. Reach out for any inquiries, partnership opportunities, or support.</p>
+      <div class="absolute inset-0 bg-[#0B4D3C] mix-blend-multiply opacity-70"></div>
+      <div class="container mx-auto px-4 relative z-10 text-white text-center">
+        <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">Strengthening Ottawa’s Muslim Community</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">Faith-inspired programs supporting families, youth, and individuals through counselling, education, and community support.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="get-help.html" class="bg-[#0B4D3C] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1A6B4F] shadow-md hover:shadow-lg transition">Get Support</a>
+          <a href="donate.html" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] shadow-md hover:shadow-lg transition">Donate</a>
+          <a href="get-involved.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Volunteer</a>
+        </div>
       </div>
     </section>
 
-    <!-- Contact Form & Info -->
-    <section class="py-20 bg-[#F9F5F0]">
+    <!-- Impact Stats (animated counters) -->
+    <section class="py-section bg-[#F9F5F0]" id="stats-section">
       <div class="container mx-auto px-4">
-        <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-          <!-- Left Column: Form Card -->
-          <div class="form-card bg-[#FEFCF8] rounded-2xl p-8 shadow-sm flex flex-col h-full">
-            <h2 class="text-3xl font-display mb-6">Send a Message</h2>
-            <form class="flex-1 flex flex-col">
-              <div class="mb-4">
-                <label for="name" class="block mb-2 font-medium">Full Name</label>
-                <input type="text" id="name" class="form-input w-full p-3 border border-[#E2D9CE] rounded-lg bg-white focus:border-[#C9A34B] transition">
-              </div>
-              <div class="mb-4">
-                <label for="email" class="block mb-2 font-medium">Email Address</label>
-                <input type="email" id="email" class="form-input w-full p-3 border border-[#E2D9CE] rounded-lg bg-white focus:border-[#C9A34B] transition">
-              </div>
-              <div class="mb-4">
-                <label for="phone" class="block mb-2 font-medium">Phone (optional)</label>
-                <input type="tel" id="phone" class="form-input w-full p-3 border border-[#E2D9CE] rounded-lg bg-white focus:border-[#C9A34B] transition">
-              </div>
-              <div class="mb-6">
-                <label for="message" class="block mb-2 font-medium">Message</label>
-                <textarea id="message" rows="5" class="form-input w-full p-3 border border-[#E2D9CE] rounded-lg bg-white focus:border-[#C9A34B] transition"></textarea>
-              </div>
-              <button type="submit" class="w-full bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition shadow-md hover:shadow-lg mb-8">Send Message</button>
-              
-              <!-- Professional Commitment Section -->
-              <div class="bg-[#C9A34B]/5 rounded-xl p-6 border border-[#C9A34B]/20">
-                <h3 class="text-xl font-display text-center mb-5 text-[#0B4D3C]">Our Commitment to You</h3>
-                <div class="grid grid-cols-3 gap-3 text-center">
-                  <div class="commitment-card p-2 rounded-lg">
-                    <svg class="w-8 h-8 text-[#C9A34B] mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5.5l-1.5 1.5 1.5 1.5 1.5-1.5L12 5.5z" />
-                    </svg>
-                    <p class="text-sm font-semibold text-[#0B4D3C]">Culturally Sensitive</p>
-                    <p class="text-xs text-[#2D2A24]/60">Care that respects your background</p>
-                  </div>
-                  <div class="commitment-card p-2 rounded-lg">
-                    <svg class="w-8 h-8 text-[#C9A34B] mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                    <p class="text-sm font-semibold text-[#0B4D3C]">Confidential & Safe</p>
-                    <p class="text-xs text-[#2D2A24]/60">Your privacy is our priority</p>
-                  </div>
-                  <div class="commitment-card p-2 rounded-lg">
-                    <svg class="w-8 h-8 text-[#C9A34B] mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                      <text x="6" y="16" font-family="Inter" font-size="8" fill="currentColor" stroke="none">A</text>
-                      <text x="13" y="16" font-family="Inter" font-size="8" fill="currentColor" stroke="none">ع</text>
-                    </svg>
-                    <p class="text-sm font-semibold text-[#0B4D3C]">Multilingual Team</p>
-                    <p class="text-xs text-[#2D2A24]/60">English, Arabic, French & more</p>
-                  </div>
-                </div>
-                <p class="text-sm text-center text-[#2D2A24]/70 mt-4 italic">"We're here to listen and support – in your language, with compassion."</p>
-              </div>
-            </form>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="stat-card">
+            <div class="stat-number stat-counter" data-target="25000" data-suffix="+">0</div>
+            <p class="text-[#2D2A24]/70">Individuals Served</p>
           </div>
+          <div class="stat-card">
+            <div class="stat-number stat-counter" data-target="15000" data-suffix="+">0</div>
+            <p class="text-[#2D2A24]/70">Counselling Sessions</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number stat-counter" data-target="500" data-suffix="+">0</div>
+            <p class="text-[#2D2A24]/70">Workshops & Events</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number stat-counter" data-target="40" data-suffix="+">0</div>
+            <p class="text-[#2D2A24]/70">Community Partners</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Right Column: Info, Map, Social -->
-          <div class="space-y-6">
-            <!-- Contact Information Card -->
-            <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm">
-              <h2 class="text-3xl font-display mb-6">Contact Information</h2>
-              <div class="space-y-4">
-                <div class="flex items-start gap-4">
-                  <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                  </svg>
-                  <div>
-                    <p class="font-semibold">Phone</p>
-                    <a href="tel:6136261141" class="text-[#0B4D3C] hover:text-[#C9A34B]">613-626-1141</a>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                  </svg>
-                  <div>
-                    <p class="font-semibold">Email</p>
-                    <a href="mailto:info@omcs.ca" class="text-[#0B4D3C] hover:text-[#C9A34B]">info@omcs.ca</a>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                  </svg>
-                  <div>
-                    <p class="font-semibold">Website</p>
-                    <a href="https://omcs.ca" target="_blank" rel="noopener" class="text-[#0B4D3C] hover:text-[#C9A34B]">omcs.ca</a>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  <div>
-                    <p class="font-semibold">Office</p>
-                    <p class="text-[#0B4D3C]">2183 Benjamin Ave, Ottawa, ON K2A 1P6</p>
-                  </div>
-                </div>
-              </div>
+    <!-- What We Do (Programs Overview) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">What We Do</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Mental Health Counselling -->
+          <a href="counselling.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Mental Health Counselling</h3>
+            <p class="text-sm text-[#2D2A24]/70">Culturally responsive therapy for individuals, couples, and families.</p>
+          </a>
+          <!-- Social Support Services -->
+          <a href="programs.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Social Support Services</h3>
+            <p class="text-sm text-[#2D2A24]/70">Helping families access essential resources and support.</p>
+          </a>
+          <!-- Education & Workshops -->
+          <a href="programs.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Education & Workshops</h3>
+            <p class="text-sm text-[#2D2A24]/70">Empowering communities through knowledge and skill-building.</p>
+          </a>
+          <!-- Community Partnerships -->
+          <a href="programs.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Community Partnerships</h3>
+            <p class="text-sm text-[#2D2A24]/70">Working with organizations to close service gaps.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories of Impact -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Real Stories. Real Change.</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Story 1: A Family's First Eid -->
+          <a href="stories.html" class="glass-card rounded-2xl overflow-hidden block">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Eid celebration" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-display mb-2">A Family's First Eid in Canada</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-4">How a food hamper brought hope and belonging to a newcomer family.</p>
+              <span class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B]">Read more →</span>
             </div>
-
-            <!-- Map Card (Updated to OpenStreetMap) -->
-            <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm">
-              <h2 class="text-3xl font-display mb-4">Find Us</h2>
-              <div class="map-container w-full h-64 rounded-xl overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  style="border:0"
-                  loading="lazy"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-75.7718%2C45.3758%2C-75.7562%2C45.3802&amp;layer=mapnik&amp;marker=45.3780%2C-75.7640">
-                </iframe>
-              </div>
-              <p class="text-sm text-[#2D2A24]/60 mt-3 text-center">
-                <a href="https://www.openstreetmap.org/?mlat=45.3780&amp;mlon=-75.7640#map=17/45.3780/-75.7640" target="_blank" rel="noopener" class="hover:text-[#C9A34B] transition">View Larger Map • Get directions</a>
-              </p>
+          </a>
+          <!-- Story 2: Delivering Hope During Ramadan -->
+          <a href="stories.html" class="glass-card rounded-2xl overflow-hidden block">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ramadan delivery" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-display mb-2">Delivering Hope During Ramadan</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-4">Volunteers ensure families can focus on faith and family.</p>
+              <span class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B]">Read more →</span>
             </div>
+          </a>
+          <!-- Story 3: Youth Mentorship -->
+          <a href="stories.html" class="glass-card rounded-2xl overflow-hidden block">
+            <img src="https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Youth" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-display mb-2">Finding Direction</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-4">How mentorship helped a teen find confidence and purpose.</p>
+              <span class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B]">Read more →</span>
+            </div>
+          </a>
+        </div>
+        <div class="text-center mt-10">
+          <a href="stories.html" class="inline-block bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">View All Stories</a>
+        </div>
+      </div>
+    </section>
 
-            <!-- Social Links Card -->
-            <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm">
-              <h2 class="text-3xl font-display mb-4">Follow Us</h2>
-              <div class="flex gap-4">
-                <a href="https://www.facebook.com/613MCS" target="_blank" rel="noopener" class="bg-[#0B4D3C] text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#1A6B4F] transition text-sm font-semibold">FB</a>
-                <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" rel="noopener" class="bg-[#0B4D3C] text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#1A6B4F] transition text-sm font-semibold">IG</a>
-              </div>
-              <p class="text-sm text-[#2D2A24]/60 mt-4">Follow us on Facebook and Instagram for updates.</p>
+    <!-- Counselling Section -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-display mb-6">Culturally Responsive Counselling</h2>
+            <ul class="space-y-3 text-lg mb-8">
+              <li class="flex items-start gap-2"><span class="text-[#C9A34B] font-bold text-xl">✓</span> Trauma support</li>
+              <li class="flex items-start gap-2"><span class="text-[#C9A34B] font-bold text-xl">✓</span> Marriage counselling</li>
+              <li class="flex items-start gap-2"><span class="text-[#C9A34B] font-bold text-xl">✓</span> Youth therapy</li>
+              <li class="flex items-start gap-2"><span class="text-[#C9A34B] font-bold text-xl">✓</span> Faith-sensitive care</li>
+            </ul>
+            <a href="counselling.html" class="inline-block bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">Find a Therapist</a>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <!-- Therapist 1: Samoon -->
+            <a href="counselling.html" class="glass-card rounded-2xl p-6 text-center block">
+              <img src="assets/Samoon Tasmim.jpg" alt="Samoon Tasmim" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-3 border-[#C9A34B]">
+              <h3 class="text-xl font-display">Samoon Tasmim</h3>
+              <p class="text-sm text-[#0B4D3C]">MA, PhD, RP</p>
+            </a>
+            <!-- Therapist 2: Berak -->
+            <a href="counselling.html" class="glass-card rounded-2xl p-6 text-center block">
+              <img src="assets/Berak Hussain.jpeg" alt="Berak Hussain" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-3 border-[#C9A34B]">
+              <h3 class="text-xl font-display">Berak Hussain</h3>
+              <p class="text-sm text-[#0B4D3C]">BA Honors, MEd, RP</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs & Services Grid -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Programs</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Youth Mentorship -->
+          <a href="programs/youth-mentorship.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Youth Mentorship</h3>
+            <p class="text-sm text-[#2D2A24]/70">One-on-one mentoring for teens.</p>
+          </a>
+          <!-- Workshops -->
+          <a href="programs/workshops.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Workshops</h3>
+            <p class="text-sm text-[#2D2A24]/70">Skill-building and personal development.</p>
+          </a>
+          <!-- Mental Health Support -->
+          <a href="programs/mental-health-support.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Mental Health Support</h3>
+            <p class="text-sm text-[#2D2A24]/70">Individual and group therapy.</p>
+          </a>
+          <!-- Family Programs -->
+          <a href="programs/family-programs.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Family Programs</h3>
+            <p class="text-sm text-[#2D2A24]/70">Parenting support and family counselling.</p>
+          </a>
+          <!-- Community Events -->
+          <a href="programs/community-events.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Community Events</h3>
+            <p class="text-sm text-[#2D2A24]/70">Gatherings that build connections.</p>
+          </a>
+          <!-- Senior Support -->
+          <a href="programs/senior-support.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Senior Support</h3>
+            <p class="text-sm text-[#2D2A24]/70">Resources and companionship for elders.</p>
+          </a>
+        </div>
+        <div class="text-center mt-10">
+          <a href="programs.html" class="inline-block bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">View All Programs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Board of Directors (Team) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Team</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Shawana Shah -->
+          <div class="glass-card rounded-2xl p-6">
+            <img src="assets/sahwana.jpg" alt="Shawana Shah" class="team-image">
+            <h3 class="text-2xl font-display text-center">Shawana Shah</h3>
+            <p class="text-[#0B4D3C] font-semibold text-center mb-3">Board Member</p>
+            <div class="bio-text text-[#2D2A24]/70 px-2">
+              <p>Shawana is a Canadian Certified Counsellor with a background in Psychology and Counselling. She currently works as a Clinician with youth experiencing complex trauma and mental health issues. She is an active member in the community with over 15 years' experience working with vulnerable populations in various community settings including community health centers, schools, hospitals, detention centers and residential programs. She is a certified Mental Health First Aid instructor and a Co-Founder of Ottawa Muslim Community Services.</p>
+            </div>
+          </div>
+          <!-- Ali Beshir -->
+          <div class="glass-card rounded-2xl p-6">
+            <img src="assets/ali.jpg" alt="Ali Beshir" class="team-image">
+            <h3 class="text-2xl font-display text-center">Ali Beshir</h3>
+            <p class="text-[#0B4D3C] font-semibold text-center mb-3">Board Member</p>
+            <div class="bio-text text-[#2D2A24]/70 px-2">
+              <p>Ali is a board member and a volunteer with over 15 years of experience in the social service field working with youth and families living in communities facing social and financial barriers, the homeless population, and people who have been impacted with addiction and mental health. Ali participated in the Shared Journey pilot project with the purpose of strengthening the relationship with Children's Aid Society and the Muslim community; with one of the goals being to reduce the number of Muslim children taken into the care of Children's Aid Society, as well as, to increase the number of Muslim foster families. Ali currently volunteers his time to meet with the Muslim youth who are in William E. Hay, youth detention Centre, to help them strengthen their religious identity.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white">
+    <!-- Partners Carousel with Logos -->
+    <section class="py-section bg-[#F9F5F0] overflow-hidden">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Trusted Partners</h2>
+        <div class="carousel-container relative w-full overflow-hidden">
+          <div class="carousel-track">
+            <!-- Partner links with logos (using Clearbit API) -->
+            <a href="https://www.pqchc.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/pqchc.com" alt="PQCHC" onerror="this.onerror=null; this.outerHTML='<span>PQCHC</span>';">
+            </a>
+            <a href="https://ottawa.ca/en" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/ottawa.ca" alt="City of Ottawa" onerror="this.onerror=null; this.outerHTML='<span>City of Ottawa</span>';">
+            </a>
+            <a href="https://www.nzfcanada.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/nzfcanada.com" alt="NZF Canada" onerror="this.onerror=null; this.outerHTML='<span>NZF Canada</span>';">
+            </a>
+            <a href="https://casott.on.ca" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/casott.on.ca" alt="CAS Ottawa" onerror="this.onerror=null; this.outerHTML='<span>CAS Ottawa</span>';">
+            </a>
+            <a href="https://www.tarbiyahlearning.ca" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/tarbiyahlearning.ca" alt="Tarbiyah Learning" onerror="this.onerror=null; this.outerHTML='<span>Tarbiyah Learning</span>';">
+            </a>
+            <a href="https://humanconcern.org" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/humanconcern.org" alt="Human Concern" onerror="this.onerror=null; this.outerHTML='<span>Human Concern</span>';">
+            </a>
+            <a href="https://hosacounselling.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/hosacounselling.com" alt="Hosa Counselling" onerror="this.onerror=null; this.outerHTML='<span>Hosa Counselling</span>';">
+            </a>
+            <a href="https://www.bgcottawa.org" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/bgcottawa.org" alt="BGC Ottawa" onerror="this.onerror=null; this.outerHTML='<span>BGC Ottawa</span>';">
+            </a>
+            <a href="https://www.rubikscounsellingservices.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/rubikscounsellingservices.com" alt="Rubiks Counselling" onerror="this.onerror=null; this.outerHTML='<span>Rubiks Counselling</span>';">
+            </a>
+            <!-- Duplicates for seamless loop -->
+            <a href="https://www.pqchc.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/pqchc.com" alt="PQCHC" onerror="this.onerror=null; this.outerHTML='<span>PQCHC</span>';">
+            </a>
+            <a href="https://ottawa.ca/en" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/ottawa.ca" alt="City of Ottawa" onerror="this.onerror=null; this.outerHTML='<span>City of Ottawa</span>';">
+            </a>
+            <a href="https://www.nzfcanada.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/nzfcanada.com" alt="NZF Canada" onerror="this.onerror=null; this.outerHTML='<span>NZF Canada</span>';">
+            </a>
+            <a href="https://casott.on.ca" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/casott.on.ca" alt="CAS Ottawa" onerror="this.onerror=null; this.outerHTML='<span>CAS Ottawa</span>';">
+            </a>
+            <a href="https://www.tarbiyahlearning.ca" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/tarbiyahlearning.ca" alt="Tarbiyah Learning" onerror="this.onerror=null; this.outerHTML='<span>Tarbiyah Learning</span>';">
+            </a>
+            <a href="https://humanconcern.org" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/humanconcern.org" alt="Human Concern" onerror="this.onerror=null; this.outerHTML='<span>Human Concern</span>';">
+            </a>
+            <a href="https://hosacounselling.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/hosacounselling.com" alt="Hosa Counselling" onerror="this.onerror=null; this.outerHTML='<span>Hosa Counselling</span>';">
+            </a>
+            <a href="https://www.bgcottawa.org" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/bgcottawa.org" alt="BGC Ottawa" onerror="this.onerror=null; this.outerHTML='<span>BGC Ottawa</span>';">
+            </a>
+            <a href="https://www.rubikscounsellingservices.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/rubikscounsellingservices.com" alt="Rubiks Counselling" onerror="this.onerror=null; this.outerHTML='<span>Rubiks Counselling</span>';">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Get Involved</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Donate -->
+          <a href="donate.html" class="glass-card rounded-2xl p-8 text-center block relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#C9A34B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2 relative z-10">Donate</h3>
+            <p class="text-sm text-[#2D2A24]/70 relative z-10">Your generosity fuels our programs.</p>
+          </a>
+          <!-- Volunteer -->
+          <a href="get-involved.html" class="glass-card rounded-2xl p-8 text-center block relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#C9A34B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2 relative z-10">Volunteer</h3>
+            <p class="text-sm text-[#2D2A24]/70 relative z-10">Share your time and skills.</p>
+          </a>
+          <!-- Partner -->
+          <a href="partner.html" class="glass-card rounded-2xl p-8 text-center block relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#C9A34B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2 relative z-10">Partner</h3>
+            <p class="text-sm text-[#2D2A24]/70 relative z-10">Collaborate to expand impact.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-section bg-[#F9F5F0]">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl md:text-5xl font-display mb-4">Need Immediate Support?</h2>
-        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Our team is here to help. Reach out by phone or email, or visit our office.</p>
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a href="tel:6136261141" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition">Call Now</a>
-          <a href="mailto:info@omcs.ca" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Email Us</a>
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white rounded-2xl p-12 shadow-lg">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Together We Can Build a Stronger Community</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Your support helps us provide vital services to those who need them most.</p>
+          <a href="donate.html" class="inline-block bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-lg">Donate Now</a>
         </div>
       </div>
     </section>
@@ -275,6 +529,49 @@
     </div>
   </footer>
 
+  <!-- JavaScript for counters and parallax -->
+  <script>
+    // Parallax effect on hero
+    window.addEventListener('scroll', () => {
+      const heroBg = document.querySelector('.hero-bg');
+      if (heroBg) {
+        heroBg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+      }
+    });
+
+    // Animated counters
+    function animateNumber(el, target, suffix) {
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target + suffix;
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+      }, 20);
+    }
+
+    const statsSection = document.getElementById('stats-section');
+    if (statsSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-counter');
+            statNumbers.forEach(el => {
+              const target = parseInt(el.dataset.target);
+              const suffix = el.dataset.suffix || '';
+              animateNumber(el, target, suffix);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(statsSection);
+    }
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
