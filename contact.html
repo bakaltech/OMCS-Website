@@ -48,6 +48,13 @@
       color: #C9A34B;
       flex-shrink: 0;
     }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body class="bg-pattern">
@@ -87,7 +94,7 @@
     <section class="py-section bg-[#F9F5F0]">
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-          <!-- Left Column: Form Card with updated professional icons -->
+          <!-- Left Column: Form Card -->
           <div class="form-card bg-[#FEFCF8] rounded-2xl p-8 shadow-sm card-hover flex flex-col h-full">
             <h2 class="text-3xl font-display mb-6">Send a Message</h2>
             <form class="flex-1 flex flex-col">
@@ -109,11 +116,10 @@
               </div>
               <button type="submit" class="w-full bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition shadow-md hover:shadow-lg mb-8">Send Message</button>
               
-              <!-- Professional Commitment Section with SVG icons -->
+              <!-- Professional Commitment Section -->
               <div class="bg-[#C9A34B]/5 rounded-xl p-6 border border-[#C9A34B]/20">
                 <h3 class="text-xl font-display text-center mb-5 text-[#0B4D3C]">Our Commitment to You</h3>
                 <div class="grid grid-cols-3 gap-3 text-center">
-                  <!-- Culturally Sensitive (heart + hand) -->
                   <div class="commitment-card p-2 rounded-lg">
                     <svg class="w-8 h-8 text-[#C9A34B] mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -122,7 +128,6 @@
                     <p class="text-sm font-semibold text-[#0B4D3C]">Culturally Sensitive</p>
                     <p class="text-xs text-[#2D2A24]/60">Care that respects your background</p>
                   </div>
-                  <!-- Confidential & Safe (shield) -->
                   <div class="commitment-card p-2 rounded-lg">
                     <svg class="w-8 h-8 text-[#C9A34B] mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -130,7 +135,6 @@
                     <p class="text-sm font-semibold text-[#0B4D3C]">Confidential & Safe</p>
                     <p class="text-xs text-[#2D2A24]/60">Your privacy is our priority</p>
                   </div>
-                  <!-- Multilingual Team (speech bubble with letters) -->
                   <div class="commitment-card p-2 rounded-lg">
                     <svg class="w-8 h-8 text-[#C9A34B] mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
@@ -146,13 +150,12 @@
             </form>
           </div>
 
-          <!-- Right Column: Info, Map, Social (professional icons already updated) -->
+          <!-- Right Column: Info, Map, Social -->
           <div class="space-y-6">
-            <!-- Contact Information Card (professional icons) -->
+            <!-- Contact Information Card -->
             <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm card-hover">
               <h2 class="text-3xl font-display mb-6">Contact Information</h2>
               <div class="space-y-4">
-                <!-- Phone -->
                 <div class="flex items-start gap-4">
                   <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
@@ -162,7 +165,6 @@
                     <a href="tel:6136261141" class="text-[#0B4D3C] hover:text-[#C9A34B]">613-626-1141</a>
                   </div>
                 </div>
-                <!-- Email -->
                 <div class="flex items-start gap-4">
                   <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -172,7 +174,6 @@
                     <a href="mailto:info@omcs.ca" class="text-[#0B4D3C] hover:text-[#C9A34B]">info@omcs.ca</a>
                   </div>
                 </div>
-                <!-- Website -->
                 <div class="flex items-start gap-4">
                   <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
@@ -182,7 +183,6 @@
                     <a href="https://omcs.ca" target="_blank" rel="noopener" class="text-[#0B4D3C] hover:text-[#C9A34B]">omcs.ca</a>
                   </div>
                 </div>
-                <!-- Office -->
                 <div class="flex items-start gap-4">
                   <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
@@ -196,7 +196,7 @@
               </div>
             </div>
 
-            <!-- Map Card (unchanged) -->
+            <!-- Map Card (OpenStreetMap) -->
             <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm card-hover">
               <h2 class="text-3xl font-display mb-4">Find Us</h2>
               <div class="map-container w-full h-64 rounded-xl overflow-hidden">
@@ -205,15 +205,15 @@
                   height="100%"
                   style="border:0"
                   loading="lazy"
-                  allowfullscreen
-                  referrerpolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=2183+Benjamin+Ave+Ottawa+ON+K2A+1P6">
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-75.7652%2C45.3750%2C-75.7630%2C45.3770&amp;layer=mapnik&amp;marker=45.3760%2C-75.7641">
                 </iframe>
               </div>
-              <p class="text-sm text-[#2D2A24]/60 mt-3 text-center">Click to interact • Zoom • Get directions</p>
+              <p class="text-sm text-[#2D2A24]/60 mt-3 text-center">
+                <a href="https://www.openstreetmap.org/?mlat=45.3760&amp;mlon=-75.7641#map=18/45.3760/-75.7641" target="_blank" rel="noopener" class="hover:text-[#C9A34B] transition">View Larger Map • Get directions</a>
+              </p>
             </div>
 
-            <!-- Social Links Card (unchanged) -->
+            <!-- Social Links Card -->
             <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm card-hover">
               <h2 class="text-3xl font-display mb-4">Follow Us</h2>
               <div class="flex gap-4">
@@ -227,7 +227,7 @@
       </div>
     </section>
 
-    <!-- CTA Section (unchanged) -->
+    <!-- CTA Section -->
     <section class="py-section bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-4xl md:text-5xl font-display mb-4">Need Immediate Support?</h2>
