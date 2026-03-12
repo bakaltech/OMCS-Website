@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Home</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .stat-card {
+      background: #FEFCF8;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border-top: 4px solid #C9A34B;
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: #0B4D3C;
+      line-height: 1.2;
+    }
+    @media (min-width: 768px) {
+      .stat-number {
+        font-size: 3.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .stat-number {
+        font-size: 4rem;
+      }
+    }
+    .hero-bg {
+      will-change: transform;
+    }
+    /* Carousel styles */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .carousel-track {
+      animation: scroll 40s linear infinite;
+      width: fit-content;
+      display: flex;
+      gap: 2rem;
+    }
+    .carousel-container:hover .carousel-track {
+      animation-play-state: paused;
+    }
+    .partner-card {
+      flex: 0 0 160px;
+      height: 80px;
+      background: #FEFCF8;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      border: 1px solid rgba(201, 163, 75, 0.3);
+      text-decoration: none;
+      color: #2D2A24;
+      font-weight: 600;
+      padding: 0 1rem;
+    }
+    .partner-card:hover {
+      background-color: #C9A34B;
+      border-color: #C9A34B;
+      color: white;
+    }
+    .partner-card img {
+      max-height: 40px;
+      max-width: 120px;
+      object-fit: contain;
+    }
+    .partner-card span {
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    .team-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #C9A34B;
+      margin: 0 auto 1rem;
+    }
+    .bio-text {
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    .bio-text::-webkit-scrollbar {
+      width: 4px;
+    }
+    .bio-text::-webkit-scrollbar-track {
+      background: #E2D9CE;
+    }
+    .bio-text::-webkit-scrollbar-thumb {
+      background: #C9A34B;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar (same as other pages) -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="get-help.html" class="hover:text-[#C9A34B] transition">Get Help</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section with Video Background -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 w-full h-full hero-bg">
+        <video autoplay loop muted playsinline class="w-full h-full object-cover">
+          <source src="https://videos.pexels.com/video-files/3195398/3195398-uhd_2732_1440_25fps.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="absolute inset-0 bg-[#0B4D3C] mix-blend-multiply opacity-70"></div>
+      <div class="container mx-auto px-4 relative z-10 text-white text-center">
+        <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">Strengthening Ottawa’s Muslim Community</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">Faith-inspired programs supporting families, youth, and individuals through counselling, education, and community support.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="get-help.html" class="bg-[#0B4D3C] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1A6B4F] shadow-md hover:shadow-lg transition">Get Support</a>
+          <a href="donate.html" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] shadow-md hover:shadow-lg transition">Donate</a>
+          <a href="get-involved.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Volunteer</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stats (animated counters) -->
+    <section class="py-section bg-[#F9F5F0]" id="stats-section">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="stat-card">
+            <div class="stat-number stat-counter" data-target="25000" data-suffix="+">0</div>
+            <p class="text-[#2D2A24]/70">Individuals Served</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number stat-counter" data-target="15000" data-suffix="+">0</div>
+            <p class="text-[#2D2A24]/70">Counselling Sessions</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number stat-counter" data-target="500" data-suffix="+">0</div>
+            <p class="text-[#2D2A24]/70">Workshops & Events</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number stat-counter" data-target="40" data-suffix="+">0</div>
+            <p class="text-[#2D2A24]/70">Community Partners</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Do (Programs Overview) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">What We Do</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Mental Health Counselling -->
+          <a href="counselling.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Mental Health Counselling</h3>
+            <p class="text-sm text-[#2D2A24]/70">Culturally responsive therapy for individuals, couples, and families.</p>
+          </a>
+          <!-- Social Support Services -->
+          <a href="programs.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Social Support Services</h3>
+            <p class="text-sm text-[#2D2A24]/70">Helping families access essential resources and support.</p>
+          </a>
+          <!-- Education & Workshops -->
+          <a href="programs.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Education & Workshops</h3>
+            <p class="text-sm text-[#2D2A24]/70">Empowering communities through knowledge and skill-building.</p>
+          </a>
+          <!-- Community Partnerships -->
+          <a href="programs.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Community Partnerships</h3>
+            <p class="text-sm text-[#2D2A24]/70">Working with organizations to close service gaps.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories of Impact -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Real Stories. Real Change.</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Story 1: A Family's First Eid -->
+          <a href="stories.html" class="glass-card rounded-2xl overflow-hidden block">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Eid celebration" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-display mb-2">A Family's First Eid in Canada</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-4">How a food hamper brought hope and belonging to a newcomer family.</p>
+              <span class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B]">Read more →</span>
+            </div>
+          </a>
+          <!-- Story 2: Delivering Hope During Ramadan -->
+          <a href="stories.html" class="glass-card rounded-2xl overflow-hidden block">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ramadan delivery" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-display mb-2">Delivering Hope During Ramadan</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-4">Volunteers ensure families can focus on faith and family.</p>
+              <span class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B]">Read more →</span>
+            </div>
+          </a>
+          <!-- Story 3: Youth Mentorship -->
+          <a href="stories.html" class="glass-card rounded-2xl overflow-hidden block">
+            <img src="https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Youth" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-display mb-2">Finding Direction</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-4">How mentorship helped a teen find confidence and purpose.</p>
+              <span class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B]">Read more →</span>
+            </div>
+          </a>
+        </div>
+        <div class="text-center mt-10">
+          <a href="stories.html" class="inline-block bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">View All Stories</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Counselling Section -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-display mb-6">Culturally Responsive Counselling</h2>
+            <ul class="space-y-3 text-lg mb-8">
+              <li class="flex items-start gap-2"><span class="text-[#C9A34B] font-bold text-xl">✓</span> Trauma support</li>
+              <li class="flex items-start gap-2"><span class="text-[#C9A34B] font-bold text-xl">✓</span> Marriage counselling</li>
+              <li class="flex items-start gap-2"><span class="text-[#C9A34B] font-bold text-xl">✓</span> Youth therapy</li>
+              <li class="flex items-start gap-2"><span class="text-[#C9A34B] font-bold text-xl">✓</span> Faith-sensitive care</li>
+            </ul>
+            <a href="counselling.html" class="inline-block bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">Find a Therapist</a>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <!-- Therapist 1: Samoon -->
+            <a href="counselling.html" class="glass-card rounded-2xl p-6 text-center block">
+              <img src="assets/Samoon Tasmim.jpg" alt="Samoon Tasmim" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-3 border-[#C9A34B]">
+              <h3 class="text-xl font-display">Samoon Tasmim</h3>
+              <p class="text-sm text-[#0B4D3C]">MA, PhD, RP</p>
+            </a>
+            <!-- Therapist 2: Berak -->
+            <a href="counselling.html" class="glass-card rounded-2xl p-6 text-center block">
+              <img src="assets/Berak Hussain.jpeg" alt="Berak Hussain" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-3 border-[#C9A34B]">
+              <h3 class="text-xl font-display">Berak Hussain</h3>
+              <p class="text-sm text-[#0B4D3C]">BA Honors, MEd, RP</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs & Services Grid -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Programs</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Youth Mentorship -->
+          <a href="programs/youth-mentorship.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Youth Mentorship</h3>
+            <p class="text-sm text-[#2D2A24]/70">One-on-one mentoring for teens.</p>
+          </a>
+          <!-- Workshops -->
+          <a href="programs/workshops.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Workshops</h3>
+            <p class="text-sm text-[#2D2A24]/70">Skill-building and personal development.</p>
+          </a>
+          <!-- Mental Health Support -->
+          <a href="programs/mental-health-support.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Mental Health Support</h3>
+            <p class="text-sm text-[#2D2A24]/70">Individual and group therapy.</p>
+          </a>
+          <!-- Family Programs -->
+          <a href="programs/family-programs.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Family Programs</h3>
+            <p class="text-sm text-[#2D2A24]/70">Parenting support and family counselling.</p>
+          </a>
+          <!-- Community Events -->
+          <a href="programs/community-events.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Community Events</h3>
+            <p class="text-sm text-[#2D2A24]/70">Gatherings that build connections.</p>
+          </a>
+          <!-- Senior Support -->
+          <a href="programs/senior-support.html" class="glass-card rounded-2xl p-6 block">
+            <h3 class="text-2xl font-display mb-2">Senior Support</h3>
+            <p class="text-sm text-[#2D2A24]/70">Resources and companionship for elders.</p>
+          </a>
+        </div>
+        <div class="text-center mt-10">
+          <a href="programs.html" class="inline-block bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">View All Programs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Board of Directors (Team) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Team</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Shawana Shah -->
+          <div class="glass-card rounded-2xl p-6">
+            <img src="assets/sahwana.jpg" alt="Shawana Shah" class="team-image">
+            <h3 class="text-2xl font-display text-center">Shawana Shah</h3>
+            <p class="text-[#0B4D3C] font-semibold text-center mb-3">Board Member</p>
+            <div class="bio-text text-[#2D2A24]/70 px-2">
+              <p>Shawana is a Canadian Certified Counsellor with a background in Psychology and Counselling. She currently works as a Clinician with youth experiencing complex trauma and mental health issues. She is an active member in the community with over 15 years' experience working with vulnerable populations in various community settings including community health centers, schools, hospitals, detention centers and residential programs. She is a certified Mental Health First Aid instructor and a Co-Founder of Ottawa Muslim Community Services.</p>
+            </div>
+          </div>
+          <!-- Ali Beshir -->
+          <div class="glass-card rounded-2xl p-6">
+            <img src="assets/ali.jpg" alt="Ali Beshir" class="team-image">
+            <h3 class="text-2xl font-display text-center">Ali Beshir</h3>
+            <p class="text-[#0B4D3C] font-semibold text-center mb-3">Board Member</p>
+            <div class="bio-text text-[#2D2A24]/70 px-2">
+              <p>Ali is a board member and a volunteer with over 15 years of experience in the social service field working with youth and families living in communities facing social and financial barriers, the homeless population, and people who have been impacted with addiction and mental health. Ali participated in the Shared Journey pilot project with the purpose of strengthening the relationship with Children's Aid Society and the Muslim community; with one of the goals being to reduce the number of Muslim children taken into the care of Children's Aid Society, as well as, to increase the number of Muslim foster families. Ali currently volunteers his time to meet with the Muslim youth who are in William E. Hay, youth detention Centre, to help them strengthen their religious identity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Carousel with Logos -->
+    <section class="py-section bg-[#F9F5F0] overflow-hidden">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Trusted Partners</h2>
+        <div class="carousel-container relative w-full overflow-hidden">
+          <div class="carousel-track">
+            <!-- Partner links with logos (using Clearbit API) -->
+            <a href="https://www.pqchc.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/pqchc.com" alt="PQCHC" onerror="this.onerror=null; this.outerHTML='<span>PQCHC</span>';">
+            </a>
+            <a href="https://ottawa.ca/en" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/ottawa.ca" alt="City of Ottawa" onerror="this.onerror=null; this.outerHTML='<span>City of Ottawa</span>';">
+            </a>
+            <a href="https://www.nzfcanada.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/nzfcanada.com" alt="NZF Canada" onerror="this.onerror=null; this.outerHTML='<span>NZF Canada</span>';">
+            </a>
+            <a href="https://casott.on.ca" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/casott.on.ca" alt="CAS Ottawa" onerror="this.onerror=null; this.outerHTML='<span>CAS Ottawa</span>';">
+            </a>
+            <a href="https://www.tarbiyahlearning.ca" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/tarbiyahlearning.ca" alt="Tarbiyah Learning" onerror="this.onerror=null; this.outerHTML='<span>Tarbiyah Learning</span>';">
+            </a>
+            <a href="https://humanconcern.org" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/humanconcern.org" alt="Human Concern" onerror="this.onerror=null; this.outerHTML='<span>Human Concern</span>';">
+            </a>
+            <a href="https://hosacounselling.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/hosacounselling.com" alt="Hosa Counselling" onerror="this.onerror=null; this.outerHTML='<span>Hosa Counselling</span>';">
+            </a>
+            <a href="https://www.bgcottawa.org" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/bgcottawa.org" alt="BGC Ottawa" onerror="this.onerror=null; this.outerHTML='<span>BGC Ottawa</span>';">
+            </a>
+            <a href="https://www.rubikscounsellingservices.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/rubikscounsellingservices.com" alt="Rubiks Counselling" onerror="this.onerror=null; this.outerHTML='<span>Rubiks Counselling</span>';">
+            </a>
+            <!-- Duplicates for seamless loop -->
+            <a href="https://www.pqchc.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/pqchc.com" alt="PQCHC" onerror="this.onerror=null; this.outerHTML='<span>PQCHC</span>';">
+            </a>
+            <a href="https://ottawa.ca/en" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/ottawa.ca" alt="City of Ottawa" onerror="this.onerror=null; this.outerHTML='<span>City of Ottawa</span>';">
+            </a>
+            <a href="https://www.nzfcanada.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/nzfcanada.com" alt="NZF Canada" onerror="this.onerror=null; this.outerHTML='<span>NZF Canada</span>';">
+            </a>
+            <a href="https://casott.on.ca" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/casott.on.ca" alt="CAS Ottawa" onerror="this.onerror=null; this.outerHTML='<span>CAS Ottawa</span>';">
+            </a>
+            <a href="https://www.tarbiyahlearning.ca" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/tarbiyahlearning.ca" alt="Tarbiyah Learning" onerror="this.onerror=null; this.outerHTML='<span>Tarbiyah Learning</span>';">
+            </a>
+            <a href="https://humanconcern.org" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/humanconcern.org" alt="Human Concern" onerror="this.onerror=null; this.outerHTML='<span>Human Concern</span>';">
+            </a>
+            <a href="https://hosacounselling.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/hosacounselling.com" alt="Hosa Counselling" onerror="this.onerror=null; this.outerHTML='<span>Hosa Counselling</span>';">
+            </a>
+            <a href="https://www.bgcottawa.org" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/bgcottawa.org" alt="BGC Ottawa" onerror="this.onerror=null; this.outerHTML='<span>BGC Ottawa</span>';">
+            </a>
+            <a href="https://www.rubikscounsellingservices.com" target="_blank" rel="noopener" class="partner-card">
+              <img src="https://logo.clearbit.com/rubikscounsellingservices.com" alt="Rubiks Counselling" onerror="this.onerror=null; this.outerHTML='<span>Rubiks Counselling</span>';">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Get Involved</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Donate -->
+          <a href="donate.html" class="glass-card rounded-2xl p-8 text-center block relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#C9A34B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2 relative z-10">Donate</h3>
+            <p class="text-sm text-[#2D2A24]/70 relative z-10">Your generosity fuels our programs.</p>
+          </a>
+          <!-- Volunteer -->
+          <a href="get-involved.html" class="glass-card rounded-2xl p-8 text-center block relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#C9A34B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2 relative z-10">Volunteer</h3>
+            <p class="text-sm text-[#2D2A24]/70 relative z-10">Share your time and skills.</p>
+          </a>
+          <!-- Partner -->
+          <a href="partner.html" class="glass-card rounded-2xl p-8 text-center block relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#C9A34B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2 relative z-10">Partner</h3>
+            <p class="text-sm text-[#2D2A24]/70 relative z-10">Collaborate to expand impact.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white rounded-2xl p-12 shadow-lg">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Together We Can Build a Stronger Community</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Your support helps us provide vital services to those who need them most.</p>
+          <a href="donate.html" class="inline-block bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-lg">Donate Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with Bakal Digital credit -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="get-help.html" class="hover:text-[#C9A34B]">Get Help</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        <div>© 2026 OMCS Counselling. All rights reserved.</div>
+        <div class="mt-3 text-white/70 font-medium">
+          Design & Development by 
+          <a href="https://bakaltech.github.io/bakal-digital/" target="_blank" rel="noopener" class="text-[#C9A34B] hover:text-white transition font-semibold">Bakal Digital</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for counters and parallax -->
+  <script>
+    // Parallax effect on hero
+    window.addEventListener('scroll', () => {
+      const heroBg = document.querySelector('.hero-bg');
+      if (heroBg) {
+        heroBg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+      }
+    });
+
+    // Animated counters
+    function animateNumber(el, target, suffix) {
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target + suffix;
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+      }, 20);
+    }
+
+    const statsSection = document.getElementById('stats-section');
+    if (statsSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-counter');
+            statNumbers.forEach(el => {
+              const target = parseInt(el.dataset.target);
+              const suffix = el.dataset.suffix || '';
+              animateNumber(el, target, suffix);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(statsSection);
+    }
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – About Us</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .value-icon {
+      width: 3rem;
+      height: 3rem;
+      color: #C9A34B;
+      margin-bottom: 1rem;
+    }
+    .team-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #C9A34B;
+      margin: 0 auto 1rem;
+    }
+    .bio-text {
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      text-align: left;
+    }
+    .bio-text::-webkit-scrollbar {
+      width: 4px;
+    }
+    .bio-text::-webkit-scrollbar-track {
+      background: #E2D9CE;
+    }
+    .bio-text::-webkit-scrollbar-thumb {
+      background: #C9A34B;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="text-[#C9A34B] font-semibold">About</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">About OMCS</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80">Inspired by faith, guided by values – serving Ottawa's Muslim community with compassion and excellence since 2000.</p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Mission -->
+          <div class="glass-card rounded-2xl p-8">
+            <h2 class="text-3xl font-display mb-4 text-[#0B4D3C]">Our Mission</h2>
+            <p class="text-[#2D2A24]/70 leading-relaxed">Ottawa Muslim Community Services (OMCS) is a registered charitable organization dedicated to reducing poverty and increasing accessibility to essential services through mobile social services, education, and collaboration. We strive to build a stronger and healthier community by meeting people where they are.</p>
+          </div>
+          <!-- Vision -->
+          <div class="glass-card rounded-2xl p-8">
+            <h2 class="text-3xl font-display mb-4 text-[#0B4D3C]">Our Vision</h2>
+            <p class="text-[#2D2A24]/70 leading-relaxed">To foster a safe and healthy community where everyone is able to access culturally and spiritually appropriate services that meet their needs. We envision a future where no one is left behind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Values</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Community -->
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="value-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Community</h3>
+            <p class="text-sm text-[#2D2A24]/70">We believe in collaborating and partnering with other organizations to complement what’s already out there.</p>
+          </div>
+          <!-- Innovation -->
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="value-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Innovation</h3>
+            <p class="text-sm text-[#2D2A24]/70">We embrace continuous improvement and creativity by being resourceful and open to change.</p>
+          </div>
+          <!-- Excellence -->
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="value-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Excellence</h3>
+            <p class="text-sm text-[#2D2A24]/70">It is our intention to deliver the highest quality of service through our ideals and actions.</p>
+          </div>
+          <!-- Diversity -->
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="value-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Diversity</h3>
+            <p class="text-sm text-[#2D2A24]/70">It takes people with different backgrounds, strengths and interests to build a stronger community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story / History -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Story</h2>
+        <div class="glass-card rounded-2xl p-8">
+          <p class="text-[#2D2A24]/70 mb-4 leading-relaxed">Founded in 2000, Ottawa Muslim Community Services began as a small initiative to help immigrant families navigate settlement challenges. Over the years, we have grown into a multi‑service organization offering counselling, food programs, youth mentorship, and community events – all rooted in Islamic values of compassion and social justice.</p>
+          <p class="text-[#2D2A24]/70 mb-4 leading-relaxed">In 2008, we launched our first youth programs. By 2015, mental health services became a core pillar. Today, we serve thousands of individuals each year through partnerships with local mosques, schools, and health networks.</p>
+          <p class="text-[#2D2A24]/70 leading-relaxed">Our journey continues as we expand mobile services and deepen our impact – always guided by faith and community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Board of Directors (updated with correct filenames) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Board of Directors</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Shawana Shah (sahwana.jpg) -->
+          <div class="glass-card rounded-2xl p-6">
+            <img src="assets/sahwana.jpg" alt="Shawana Shah" class="team-image">
+            <h3 class="text-2xl font-display text-center mt-4">Shawana Shah</h3>
+            <p class="text-[#0B4D3C] font-semibold text-center">Board Member</p>
+            <div class="bio-text text-sm text-[#2D2A24]/70 mt-3 px-2">
+              <p>Shawana is a Canadian Certified Counsellor with a background in Psychology and Counselling. Shawana currently works as a Clinician with youth experiencing complex trauma and mental health issues. She is an active member in the community with over 15 years’ experience working with vulnerable populations in various community settings including community health centers, schools, hospitals, detention centers and residential programs. She is a certified Mental Health First Aid instructor and a Co-Founder of Ottawa Muslim Community Services.</p>
+            </div>
+          </div>
+          <!-- Ali Beshir (ali.jpg) -->
+          <div class="glass-card rounded-2xl p-6">
+            <img src="assets/ali.jpg" alt="Ali Beshir" class="team-image">
+            <h3 class="text-2xl font-display text-center mt-4">Ali Beshir</h3>
+            <p class="text-[#0B4D3C] font-semibold text-center">Board Member</p>
+            <div class="bio-text text-sm text-[#2D2A24]/70 mt-3 px-2">
+              <p>Ali is a board member and a volunteer with over 15 years of experience in the social service field working with youth and families living in communities facing social and financial barriers, the homeless population, and people who have been impacted with addiction and mental health. Ali participated in the Shared Journey pilot project with the purpose of strengthening the relationship with Children’s Aid Society and the Muslim community; with one of the goals being to reduce the number of Muslim children taken into the care of Children’s Aid Society, as well as, to increase the number of Muslim foster families. Ali currently volunteers his time to meet with the Muslim youth who are in William E. Hay, youth detention Centre, to help them strengthen their religious identity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Clinical Team (updated filenames) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Therapists</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Samoon Tasnim (Samoon Tasnim.jpg) -->
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <img src="assets/Samoon Tasmim.jpg" alt="Samoon Tasmim" class="team-image">
+            <h3 class="text-2xl font-display mt-4">Samoon Tasnim</h3>
+            <p class="text-[#0B4D3C] font-semibold">MA, PhD, RP · Program Advisor</p>
+            <p class="text-sm text-[#2D2A24]/70 mt-2">Specializes in trauma, narrative therapy, and culturally‑sensitive care.</p>
+          </div>
+          <!-- Berak Hussain (Berak Hussain.jpeg) -->
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <img src="assets/Berak Hussain.jpeg" alt="Berak Hussain" class="team-image">
+            <h3 class="text-2xl font-display mt-4">Berak Hussain</h3>
+            <p class="text-[#0B4D3C] font-semibold">BA Honors, MEd, RP</p>
+            <p class="text-sm text-[#2D2A24]/70 mt-2">CBT, attachment‑based therapy, multicultural counselling.</p>
+          </div>
+          <!-- Buraidah Razack (Buraidah Razack.jpg) -->
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <img src="assets/Buraidah Razack.jpg" alt="Buraidah Razack" class="team-image">
+            <h3 class="text-2xl font-display mt-4">Buraidah Razack</h3>
+            <p class="text-[#0B4D3C] font-semibold">BA, MSW (in progress) · Social worker in training</p>
+            <p class="text-sm text-[#2D2A24]/70 mt-2">Compassion‑focused, narrative, and trauma‑informed therapy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action: Join Us -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white rounded-2xl p-12 shadow-lg">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Be Part of Our Story</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Whether you need support or want to give back, there's a place for you at OMCS.</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="get-involved.html" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-lg">Get Involved</a>
+            <a href="donate.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Donate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+            <li><a href="contact.html" class="hover:text-[#C9A34B]">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        © 2026 OMCS Counselling. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

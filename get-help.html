@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Get Help</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .help-icon {
+      width: 3rem;
+      height: 3rem;
+      color: #C9A34B;
+      margin-bottom: 1rem;
+    }
+    .triage-note {
+      background-color: rgba(201, 163, 75, 0.1);
+      border-left: 4px solid #C9A34B;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar (updated with Get Help) -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="get-help.html" class="text-[#C9A34B] font-semibold">Get Help</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">Get Help</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80">You're not alone. Tell us what you need, and we'll connect you to the right support.</p>
+      </div>
+    </section>
+
+    <!-- Triage Note – clarifies distinction -->
+    <section class="py-section bg-[#F9F5F0] pt-0">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="triage-note p-6 rounded-2xl">
+          <p class="text-[#2D2A24]/80"><span class="font-bold text-[#0B4D3C]">Not sure where to start?</span> This page helps you explore all our services. If you already know you're looking for therapy, you can go directly to our <a href="counselling.html" class="text-[#C9A34B] font-semibold underline underline-offset-2">Counselling page</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Support Categories -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">What do you need help with?</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Mental Health (links to Counselling) -->
+          <a href="counselling.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="help-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Mental Health</h3>
+            <p class="text-sm text-[#2D2A24]/70">Individual, couples, and family counselling. Trauma, anxiety, depression, and more.</p>
+          </a>
+          <!-- Family Support (links to Programs filtered) -->
+          <a href="programs.html?category=family" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="help-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Family Support</h3>
+            <p class="text-sm text-[#2D2A24]/70">Parenting workshops, family counselling, and resources to strengthen bonds.</p>
+          </a>
+          <!-- Community Programs (links to Programs) -->
+          <a href="programs.html" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="help-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Community Programs</h3>
+            <p class="text-sm text-[#2D2A24]/70">Youth mentorship, newcomer settlement, workshops, and events.</p>
+          </a>
+          <!-- Emergency Resources -->
+          <a href="#" class="glass-card rounded-2xl p-6 text-center block">
+            <svg class="help-icon mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Emergency Resources</h3>
+            <p class="text-sm text-[#2D2A24]/70">Immediate support – food, shelter, crisis lines, and urgent needs.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works (simple steps) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">How It Works</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <span class="text-5xl text-[#C9A34B] font-display block mb-4">1</span>
+            <h3 class="text-2xl font-display mb-2">Choose a Service</h3>
+            <p class="text-sm text-[#2D2A24]/70">Select the area where you need support – we're here to listen.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <span class="text-5xl text-[#C9A34B] font-display block mb-4">2</span>
+            <h3 class="text-2xl font-display mb-2">Get Connected</h3>
+            <p class="text-sm text-[#2D2A24]/70">We'll match you with the right person or program within 24 hours.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <span class="text-5xl text-[#C9A34B] font-display block mb-4">3</span>
+            <h3 class="text-2xl font-display mb-2">Begin Your Journey</h3>
+            <p class="text-sm text-[#2D2A24]/70">Start receiving compassionate, culturally‑sensitive care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Contact Card -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="glass-card rounded-2xl p-8 text-center border-l-4 border-[#C9A34B]">
+          <h2 class="text-3xl font-display mb-4">📞 Speak with Someone Today</h2>
+          <p class="text-[#2D2A24]/70 mb-6">If you need immediate assistance or aren't sure where to start, call or email us. We're here to help.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="tel:6136261141" class="bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">Call 613-626-1141</a>
+            <a href="mailto:info@omcs.ca" class="border-2 border-[#0B4D3C] text-[#0B4D3C] px-6 py-3 rounded-full font-semibold hover:bg-[#0B4D3C] hover:text-white transition">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Confidentiality Note -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm max-w-2xl mx-auto">
+          <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+          <h3 class="text-2xl font-display mb-2">Your Privacy Matters</h3>
+          <p class="text-[#2D2A24]/70">All conversations are confidential. We adhere to strict ethical and legal standards to protect your information.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action: Support Us -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white rounded-2xl p-12 shadow-lg">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Help Others Find Support</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Your donations help us provide free and low‑cost services to those in need.</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="donate.html" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-lg">Donate Now</a>
+            <a href="get-involved.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Get Involved</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="get-help.html" class="hover:text-[#C9A34B]">Get Help</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        © 2026 OMCS Counselling. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

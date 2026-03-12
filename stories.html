@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Stories of Impact</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .category-tag {
+      display: inline-block;
+      background-color: rgba(201, 163, 75, 0.1);
+      color: #0B4D3C;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .category-tag:hover {
+      background-color: #C9A34B;
+      color: white;
+    }
+    .category-tag.active {
+      background-color: #C9A34B;
+      color: white;
+    }
+    .story-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 1rem 1rem 0 0;
+    }
+    .featured-image {
+      height: 300px;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    .full-story {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    .full-story.show {
+      max-height: 500px;
+    }
+    /* Carousel styles */
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      width: fit-content;
+      animation: scroll 40s linear infinite;
+    }
+    .carousel-container:hover .carousel-track {
+      animation-play-state: paused;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .carousel-item {
+      flex: 0 0 280px;
+      height: 200px;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="text-[#C9A34B] font-semibold">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">Stories of Impact</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80">Real people, real change – hear how OMCS has made a difference in the lives of individuals and families in Ottawa's Muslim community.</p>
+      </div>
+    </section>
+
+    <!-- Featured Story: Ensuring No One Celebrates Eid Alone -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Featured Story</h2>
+        <div class="glass-card rounded-2xl overflow-hidden">
+          <div class="grid md:grid-cols-2 gap-0">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Eid hamper delivery" class="featured-image w-full h-full object-cover">
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+              <span class="category-tag mb-4">Food Programs</span>
+              <h3 class="text-3xl font-display mb-4">Ensuring No One Celebrates Eid Alone</h3>
+              <div class="text-[#2D2A24]/70 mb-6">
+                <p>During the Eid al-Adha Food Hamper event, volunteers prepared food packages for families who might otherwise go without a proper celebration. Each hamper contained groceries to help families prepare festive meals at home.</p>
+                <div id="featured-full" class="full-story mt-4">
+                  <p class="mt-2">For seniors living alone and families experiencing hardship, the initiative meant they could still experience the joy of Eid. "These programs remind people they are not forgotten," said one organizer. "Eid is about sacrifice, generosity, and caring for one another." Through community donations and volunteer efforts, hundreds of families are able to celebrate Eid with dignity each year.</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('featured-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition self-start">Read full story →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter (Stories) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center gap-2 mb-12" id="filter-buttons">
+          <span class="category-tag active" data-filter="all">All Stories</span>
+          <span class="category-tag" data-filter="counselling">Counselling</span>
+          <span class="category-tag" data-filter="settlement">Settlement</span>
+          <span class="category-tag" data-filter="youth">Youth</span>
+          <span class="category-tag" data-filter="family">Family</span>
+          <span class="category-tag" data-filter="volunteer">Volunteer</span>
+          <span class="category-tag" data-filter="community">Community</span>
+          <span class="category-tag" data-filter="food">Food Programs</span>
+        </div>
+
+        <!-- Stories Grid (9 cards) -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="stories-grid">
+          <!-- 1: A Family's First Eid in Canada (Food) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="food">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Family celebrating" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Food Programs</span>
+              <h3 class="text-2xl font-display mb-2">A Family's First Eid in Canada</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>When Amina and her children arrived, celebrating Eid felt impossible. Then OMCS delivered a food hamper...</p>
+                <div id="story1-full" class="full-story">
+                  <p class="mt-2">Through the Eid Hamper program, volunteers delivered halal groceries and Eid essentials. "When the hamper arrived, my kids were smiling again. It made us feel like we belonged here." Community donations make this possible each year.</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story1-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+
+          <!-- 2: Delivering Hope During Ramadan (Food) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="food">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ramadan food delivery" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Food Programs</span>
+              <h3 class="text-2xl font-display mb-2">Delivering Hope During Ramadan</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>During Ramadan, many families struggle with iftar costs. OMCS volunteers delivered essential groceries...</p>
+                <div id="story2-full" class="full-story">
+                  <p class="mt-2">For single father Ahmed, the support lifted a heavy burden. "Ramadan is supposed to be peaceful. This helped us focus on faith and family."</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story2-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+
+          <!-- 3: Helping Youth Stay Connected (Youth) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="youth">
+            <img src="https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Youth with faith" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Youth</span>
+              <h3 class="text-2xl font-display mb-2">Helping Youth Stay Connected</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>For Muslim youth in foster care, staying connected to faith is hard. OMCS partnered with Children's Aid...</p>
+                <div id="story3-full" class="full-story">
+                  <p class="mt-2">Activities explaining Hajj and Eid helped youth feel proud of their identity. "It made me feel less alone," one teen shared.</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story3-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+
+          <!-- 4: Volunteers Turn Compassion Into Action (Volunteer) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="volunteer">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Volunteers packing" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Volunteer</span>
+              <h3 class="text-2xl font-display mb-2">Volunteers Turn Compassion Into Action</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>Dozens gathered to pack Eid hampers. Students, parents, leaders – all united to serve...</p>
+                <div id="story4-full" class="full-story">
+                  <p class="mt-2">"Even small acts of kindness can change someone's day," said a volunteer. Service is at OMCS's heart.</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story4-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+
+          <!-- 5: Bringing Communities Together Through Ramadan (Community) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="community">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Community iftar" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Community</span>
+              <h3 class="text-2xl font-display mb-2">Bringing Communities Together</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>Non-Muslim colleagues joined a Ramadan Fasting Challenge, breaking fast together and learning...</p>
+                <div id="story5-full" class="full-story">
+                  <p class="mt-2">"It built empathy and stronger relationships," said a participant. Service builds bridges.</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story5-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+
+          <!-- 6: Finding Peace After Trauma (Counselling) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="counselling">
+            <img src="https://images.unsplash.com/photo-1594708767771-a4f9e5a1c6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Woman in hijab" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Counselling</span>
+              <h3 class="text-2xl font-display mb-2">Finding Peace After Trauma</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>After domestic abuse, Fatima felt alone. OMCS matched her with a culturally‑sensitive counsellor...</p>
+                <div id="story6-full" class="full-story">
+                  <p class="mt-2">"I finally felt heard. She helped me heal." Fatima now volunteers to support other women.</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story6-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+
+          <!-- 7: A New Beginning (Settlement) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="settlement">
+            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Newcomer family" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Settlement</span>
+              <h3 class="text-2xl font-display mb-2">A New Beginning</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>The Al‑Rashid family arrived with little. OMCS helped with housing, school, and language classes...</p>
+                <div id="story7-full" class="full-story">
+                  <p class="mt-2">"They gave us confidence. Now we help other newcomers."</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story7-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+
+          <!-- 8: Finding Direction (Youth) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="youth">
+            <img src="https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Teen smiling" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Youth</span>
+              <h3 class="text-2xl font-display mb-2">Finding Direction</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>Hassan, 17, had dropped out. A mentor helped him return to school and discover his potential...</p>
+                <div id="story8-full" class="full-story">
+                  <p class="mt-2">"He believed in me. Now I'm in college studying computer science."</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story8-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+
+          <!-- 9: Strengthening Bonds (Family) -->
+          <div class="glass-card rounded-2xl overflow-hidden" data-category="family">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Family together" class="story-image">
+            <div class="p-6">
+              <span class="category-tag mb-3">Family</span>
+              <h3 class="text-2xl font-display mb-2">Strengthening Bonds</h3>
+              <div class="text-[#2D2A24]/70 mb-2">
+                <p>The Khans were constantly arguing. Family counselling helped them communicate and rebuild trust...</p>
+                <div id="story9-full" class="full-story">
+                  <p class="mt-2">"We learned to listen, not just hear. Now we're closer than ever."</p>
+                </div>
+              </div>
+              <button onclick="toggleStory('story9-full')" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Read more →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Gallery Section (with category‑tag buttons) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Event Gallery</h2>
+        
+        <!-- Gallery Buttons (same style as story filter) -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+          <span class="category-tag active" data-gallery="eid">Eid Food Hamper</span>
+          <span class="category-tag" data-gallery="ramadan">Ramadan Delivery</span>
+          <span class="category-tag" data-gallery="community">Community Iftar</span>
+        </div>
+
+        <!-- Carousel Container -->
+        <div id="gallery-carousel" class="carousel-container glass-card p-6">
+          <div class="carousel-track" id="carousel-track">
+            <!-- Images will be injected by JavaScript -->
+          </div>
+        </div>
+        <p class="text-sm text-center text-[#2D2A24]/60 mt-4">Hover to pause • Automatically scrolls</p>
+      </div>
+    </section>
+
+    <!-- Get Involved CTA -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white rounded-2xl p-12 shadow-lg">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Support Our Work</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Your donations and volunteer time make these stories possible. Join us in strengthening Ottawa's Muslim community.</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="donate.html" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-lg">Donate Now</a>
+            <a href="volunteer.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Volunteer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Share Your Story CTA -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-[#FEFCF8] rounded-2xl p-12 shadow-sm max-w-3xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Share Your Story</h2>
+          <p class="text-lg mb-8">Has OMCS made a difference in your life? We'd love to hear from you.</p>
+          <a href="contact.html" class="inline-block bg-[#0B4D3C] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1A6B4F] transition shadow-md hover:shadow-lg">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+            <li><a href="contact.html" class="hover:text-[#C9A34B]">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        © 2026 OMCS Counselling. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Toggle full story
+    function toggleStory(id) {
+      const element = document.getElementById(id);
+      element.classList.toggle('show');
+    }
+
+    // Category filter for stories
+    const filterButtons = document.querySelectorAll('#filter-buttons .category-tag');
+    const storyCards = document.querySelectorAll('#stories-grid .glass-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        storyCards.forEach(card => {
+          const category = card.dataset.category;
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Gallery data – 12 images per event (replace with real photos later)
+    const galleries = {
+      eid: [
+        'https://images.unsplash.com/photo-1591604466107-ec97e577daf2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1594708767771-a4f9e5a1c6e0?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1591604466107-ec97e577daf2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1594708767771-a4f9e5a1c6e0?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop'
+      ],
+      ramadan: [
+        'https://images.unsplash.com/photo-1591604466107-ec97e577daf2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1594708767771-a4f9e5a1c6e0?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1591604466107-ec97e577daf2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1594708767771-a4f9e5a1c6e0?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop'
+      ],
+      community: [
+        'https://images.unsplash.com/photo-1591604466107-ec97e577daf2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1594708767771-a4f9e5a1c6e0?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1591604466107-ec97e577daf2?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1594708767771-a4f9e5a1c6e0?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop',
+        'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop'
+      ]
+    };
+
+    const track = document.getElementById('carousel-track');
+    const galleryBtns = document.querySelectorAll('[data-gallery]');
+
+    function loadGallery(galleryName) {
+      const images = galleries[galleryName];
+      const duplicated = [...images, ...images]; // seamless loop
+      track.innerHTML = duplicated.map(src => `
+        <div class="carousel-item">
+          <img src="${src}" alt="${galleryName} gallery image" loading="lazy">
+        </div>
+      `).join('');
+    }
+
+    // Initial load
+    loadGallery('eid');
+
+    galleryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        galleryBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const gallery = btn.dataset.gallery;
+        loadGallery(gallery);
+      });
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

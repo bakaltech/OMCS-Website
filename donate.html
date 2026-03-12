@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Donate</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .donation-amount {
+      background-color: rgba(201, 163, 75, 0.1);
+      color: #0B4D3C;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .donation-amount:hover {
+      background-color: #C9A34B;
+      color: white;
+    }
+    .donation-amount.selected {
+      background-color: #C9A34B;
+      color: white;
+      border-color: #0B4D3C;
+    }
+    .frequency-toggle {
+      display: flex;
+      background-color: rgba(201, 163, 75, 0.1);
+      border-radius: 9999px;
+      padding: 0.25rem;
+    }
+    .frequency-option {
+      padding: 0.5rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .frequency-option.active {
+      background-color: #C9A34B;
+      color: white;
+    }
+    .gateway-button {
+      transition: all 0.2s;
+    }
+    .gateway-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
+    }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar (with Get Help) -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="get-help.html" class="hover:text-[#C9A34B] transition">Get Help</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">Support Our Mission</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80">Your generosity helps us provide vital services to Ottawa's Muslim community – from counselling to food programs and youth mentorship.</p>
+      </div>
+    </section>
+
+    <!-- Impact Stats with Counting Animation -->
+    <section class="py-section bg-[#F9F5F0]" id="stats-section">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- Stat 1 -->
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="25000" data-suffix="+">0</div>
+            <p class="text-sm text-[#2D2A24]/70">Individuals Served</p>
+          </div>
+          <!-- Stat 2 -->
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="15000" data-suffix="+">0</div>
+            <p class="text-sm text-[#2D2A24]/70">Counselling Sessions</p>
+          </div>
+          <!-- Stat 3 -->
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="500" data-suffix="+">0</div>
+            <p class="text-sm text-[#2D2A24]/70">Workshops & Events</p>
+          </div>
+          <!-- Stat 4 -->
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="40" data-suffix="+">0</div>
+            <p class="text-sm text-[#2D2A24]/70">Community Partners</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation Form Card -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="glass-card rounded-2xl p-8 md:p-12">
+          <h2 class="text-3xl md:text-4xl font-display text-center mb-8">Make a Donation</h2>
+          
+          <!-- Frequency Toggle -->
+          <div class="flex justify-center mb-8">
+            <div class="frequency-toggle">
+              <span class="frequency-option active" data-frequency="one-time">One Time</span>
+              <span class="frequency-option" data-frequency="monthly">Monthly</span>
+            </div>
+          </div>
+
+          <!-- Suggested Amounts -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+            <span class="donation-amount text-center" data-amount="25">$25</span>
+            <span class="donation-amount selected text-center" data-amount="50">$50</span>
+            <span class="donation-amount text-center" data-amount="100">$100</span>
+            <span class="donation-amount text-center" data-amount="other">Other</span>
+          </div>
+
+          <!-- Custom Amount (hidden until "Other" selected) -->
+          <div id="custom-amount-field" class="mb-6 hidden">
+            <label class="block mb-2 font-medium">Enter amount ($)</label>
+            <input type="number" id="custom-amount" min="1" step="1" class="w-full p-3 border border-[#E2D9CE] rounded-lg focus:border-[#C9A34B] focus:ring-2 focus:ring-[#C9A34B]/20">
+          </div>
+
+          <!-- Donor Info (optional – can be removed if gateway collects it) -->
+          <div class="space-y-4 mb-6">
+            <div>
+              <label class="block mb-2 font-medium">Full Name (optional)</label>
+              <input type="text" id="donor-name" class="w-full p-3 border border-[#E2D9CE] rounded-lg focus:border-[#C9A34B] focus:ring-2 focus:ring-[#C9A34B]/20">
+            </div>
+            <div>
+              <label class="block mb-2 font-medium">Email Address (optional)</label>
+              <input type="email" id="donor-email" class="w-full p-3 border border-[#E2D9CE] rounded-lg focus:border-[#C9A34B] focus:ring-2 focus:ring-[#C9A34B]/20">
+            </div>
+          </div>
+
+          <!-- Gateway Buttons – REPLACE THESE WITH YOUR ACTUAL PAYPAL/STRIPE CODE -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <!-- PayPal Button Placeholder -->
+            <div id="paypal-button-container" class="gateway-button bg-[#0B4D3C] text-white px-6 py-4 rounded-full font-semibold text-center cursor-pointer hover:bg-[#1A6B4F] transition shadow-lg">
+              Donate with PayPal
+            </div>
+            <!-- Stripe / Card Button Placeholder -->
+            <div id="stripe-button-container" class="gateway-button bg-[#C9A34B] text-white px-6 py-4 rounded-full font-semibold text-center cursor-pointer hover:bg-[#E0C17C] transition shadow-lg">
+              Donate with Card
+            </div>
+          </div>
+
+          <!-- Note: The above buttons will be replaced with actual gateway SDK code. -->
+          <!-- For PayPal, use: <div id="paypal-button-container"></div> and load the PayPal SDK. -->
+          <!-- For Stripe, use: <div id="stripe-button"></div> and load Stripe.js. -->
+
+          <!-- Secure & Trust Badges -->
+          <div class="flex flex-wrap justify-center gap-4 mt-6 text-sm text-[#2D2A24]/60">
+            <span>🔒 256‑bit SSL</span>
+            <span>📧 Tax Receipt Issued</span>
+            <span>💚 100% Goes to Programs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Donate? (Values/Impact) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Where Your Money Goes</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Counselling</h3>
+            <p class="text-sm text-[#2D2A24]/70">Subsidized therapy sessions for individuals, couples, and families.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Food Hampers</h3>
+            <p class="text-sm text-[#2D2A24]/70">Providing essential groceries to families during Ramadan and Eid.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Youth Programs</h3>
+            <p class="text-sm text-[#2D2A24]/70">Mentorship, workshops, and leadership opportunities for teens.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="glass-card rounded-2xl p-8 text-center">
+          <svg class="w-10 h-10 text-[#C9A34B] mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+          <p class="text-lg italic text-[#2D2A24]/80 mb-6">"When we received the Eid hamper, my kids were smiling again. It made us feel like we belonged here."</p>
+          <p class="font-semibold">— Amina, program participant</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Ways to Give -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Other Ways to Give</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <h3 class="text-2xl font-display mb-2">E‑Transfer</h3>
+            <p class="text-sm text-[#2D2A24]/70 mb-3">Send directly to <strong>donate@omcs.ca</strong></p>
+            <p class="text-xs text-[#2D2A24]/60">Please include your name and address for tax receipt.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <h3 class="text-2xl font-display mb-2">Cheque</h3>
+            <p class="text-sm text-[#2D2A24]/70 mb-3">Payable to "Ottawa Muslim Community Services"</p>
+            <p class="text-xs text-[#2D2A24]/60">Mail to: 2183 Benjamin Ave, Ottawa, ON K2A 1P6</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action: Get Involved -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white rounded-2xl p-12 shadow-lg">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Want to Do More?</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Volunteer your time, partner with us, or start a fundraiser.</p>
+          <a href="get-involved.html" class="inline-block bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-lg">Get Involved</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with Bakal Digital credit -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="get-help.html" class="hover:text-[#C9A34B]">Get Help</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        <div>© 2026 OMCS Counselling. All rights reserved.</div>
+        <div class="mt-3 text-white/70 font-medium">
+          Design & Development by 
+          <a href="https://bakaltech.github.io/bakal-digital/" target="_blank" rel="noopener" class="text-[#C9A34B] hover:text-white transition font-semibold">Bakal Digital</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for counting animation and donation interaction -->
+  <script>
+    // Counting animation for stats
+    function animateNumber(el, target, suffix) {
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target + suffix;
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+      }, 20);
+    }
+
+    const statsSection = document.getElementById('stats-section');
+    if (statsSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            statNumbers.forEach(el => {
+              const target = parseInt(el.dataset.target);
+              const suffix = el.dataset.suffix || '';
+              animateNumber(el, target, suffix);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(statsSection);
+    }
+
+    // Frequency toggle (visual)
+    const frequencyOptions = document.querySelectorAll('.frequency-option');
+    frequencyOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        frequencyOptions.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+      });
+    });
+
+    // Donation amount selection
+    const amountButtons = document.querySelectorAll('.donation-amount');
+    const customField = document.getElementById('custom-amount-field');
+    const customInput = document.getElementById('custom-amount');
+    let selectedAmount = 50; // default
+
+    amountButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        amountButtons.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        if (btn.dataset.amount === 'other') {
+          customField.classList.remove('hidden');
+          selectedAmount = parseFloat(customInput.value) || 0;
+        } else {
+          customField.classList.add('hidden');
+          selectedAmount = parseInt(btn.dataset.amount);
+        }
+      });
+    });
+
+    if (customInput) {
+      customInput.addEventListener('input', () => {
+        selectedAmount = parseFloat(customInput.value) || 0;
+      });
+    }
+
+    // Function to get current donation details (to be used by gateway scripts)
+    function getDonationDetails() {
+      const frequency = document.querySelector('.frequency-option.active').dataset.frequency;
+      return {
+        amount: selectedAmount,
+        frequency: frequency,
+        name: document.getElementById('donor-name').value,
+        email: document.getElementById('donor-email').value
+      };
+    }
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

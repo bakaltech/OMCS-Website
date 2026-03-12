@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Our Programs</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .category-tag {
+      display: inline-block;
+      background-color: rgba(201, 163, 75, 0.1);
+      color: #0B4D3C;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .category-tag:hover {
+      background-color: #C9A34B;
+      color: white;
+      cursor: pointer;
+    }
+    .category-tag.active {
+      background-color: #C9A34B;
+      color: white;
+    }
+    .faq-question {
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+    .stat-number {
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="programs.html" class="text-[#C9A34B] font-semibold">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">Our Programs</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80">Empowering individuals and families through culturally‑responsive services, education, and community support.</p>
+      </div>
+    </section>
+
+    <!-- Intro Paragraph -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl text-center">
+        <p class="text-lg text-[#2D2A24]/80 leading-relaxed">At OMCS, we design programs that meet the unique needs of Ottawa's Muslim community. From youth mentorship to senior support, every initiative is rooted in compassion, cultural understanding, and a commitment to excellence. Explore our offerings below and find the support you need.</p>
+      </div>
+    </section>
+
+    <!-- Key Values / Approach (icons) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">How We Help</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-xl font-display mb-2">Community‑Led</h3>
+            <p class="text-sm text-[#2D2A24]/70">Programs shaped by the needs of the community we serve.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+            <h3 class="text-xl font-display mb-2">Culturally Sensitive</h3>
+            <p class="text-sm text-[#2D2A24]/70">Respecting and integrating cultural values in every service.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <h3 class="text-xl font-display mb-2">Impact‑Driven</h3>
+            <p class="text-sm text-[#2D2A24]/70">Focused on real outcomes and long‑term well‑being.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <h3 class="text-xl font-display mb-2">Holistic Care</h3>
+            <p class="text-sm text-[#2D2A24]/70">Supporting mind, body, and spirit together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Filter & Cards -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Explore Our Programs</h2>
+        
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12" id="filter-buttons">
+          <span class="category-tag active" data-filter="all">All</span>
+          <span class="category-tag" data-filter="youth">Youth</span>
+          <span class="category-tag" data-filter="family">Family</span>
+          <span class="category-tag" data-filter="mental-health">Mental Health</span>
+          <span class="category-tag" data-filter="community">Community</span>
+          <span class="category-tag" data-filter="seniors">Seniors</span>
+        </div>
+
+        <!-- Program Cards Grid (with links to individual program pages) -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="program-cards">
+          <!-- Youth Mentorship (category: youth) -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col" data-category="youth">
+            <h3 class="text-2xl font-display mb-3 text-[#0B4D3C]">Youth Mentorship</h3>
+            <p class="text-[#2D2A24]/70 flex-1 mb-4">One-on-one mentoring for teens to build confidence, life skills, and a sense of belonging.</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="category-tag">Youth</span>
+              <button onclick="window.location.href='programs/youth-mentorship.html'" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Learn more →</button>
+            </div>
+          </div>
+
+          <!-- Workshops (category: community) -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col" data-category="community">
+            <h3 class="text-2xl font-display mb-3 text-[#0B4D3C]">Workshops</h3>
+            <p class="text-[#2D2A24]/70 flex-1 mb-4">Skill-building and personal development workshops on topics like stress management, parenting, and career planning.</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="category-tag">Community</span>
+              <button onclick="window.location.href='programs/workshops.html'" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Learn more →</button>
+            </div>
+          </div>
+
+          <!-- Mental Health Support (category: mental-health) -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col" data-category="mental-health">
+            <h3 class="text-2xl font-display mb-3 text-[#0B4D3C]">Mental Health Support</h3>
+            <p class="text-[#2D2A24]/70 flex-1 mb-4">Individual and group therapy, counselling, and wellness programs tailored to cultural needs.</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="category-tag">Mental Health</span>
+              <button onclick="window.location.href='programs/mental-health-support.html'" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Learn more →</button>
+            </div>
+          </div>
+
+          <!-- Family Programs (category: family) -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col" data-category="family">
+            <h3 class="text-2xl font-display mb-3 text-[#0B4D3C]">Family Programs</h3>
+            <p class="text-[#2D2A24]/70 flex-1 mb-4">Parenting support, family counselling, and resources to strengthen family bonds.</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="category-tag">Family</span>
+              <button onclick="window.location.href='programs/family-programs.html'" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Learn more →</button>
+            </div>
+          </div>
+
+          <!-- Community Events (category: community) -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col" data-category="community">
+            <h3 class="text-2xl font-display mb-3 text-[#0B4D3C]">Community Events</h3>
+            <p class="text-[#2D2A24]/70 flex-1 mb-4">Gatherings, cultural celebrations, and networking opportunities that build connections.</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="category-tag">Community</span>
+              <button onclick="window.location.href='programs/community-events.html'" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Learn more →</button>
+            </div>
+          </div>
+
+          <!-- Senior Support (category: seniors) -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col" data-category="seniors">
+            <h3 class="text-2xl font-display mb-3 text-[#0B4D3C]">Senior Support</h3>
+            <p class="text-[#2D2A24]/70 flex-1 mb-4">Resources, companionship, and wellness programs for elders to thrive in their community.</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="category-tag">Seniors</span>
+              <button onclick="window.location.href='programs/senior-support.html'" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Learn more →</button>
+            </div>
+          </div>
+
+          <!-- Addiction Support (category: mental-health) -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col" data-category="mental-health">
+            <h3 class="text-2xl font-display mb-3 text-[#0B4D3C]">Addiction Support</h3>
+            <p class="text-[#2D2A24]/70 flex-1 mb-4">Counselling and resources for individuals and families affected by addiction.</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="category-tag">Mental Health</span>
+              <button onclick="window.location.href='programs/addiction-support.html'" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Learn more →</button>
+            </div>
+          </div>
+
+          <!-- Newcomer Settlement (category: community) -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col" data-category="community">
+            <h3 class="text-2xl font-display mb-3 text-[#0B4D3C]">Newcomer Settlement</h3>
+            <p class="text-[#2D2A24]/70 flex-1 mb-4">Guidance and support for newcomers to integrate and thrive in Ottawa.</p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="category-tag">Community</span>
+              <button onclick="window.location.href='programs/newcomer-settlement.html'" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] transition">Learn more →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="py-section bg-[#F9F5F0]" id="stats-section">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Reach</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="3500" data-suffix="+">0</div>
+            <div class="text-[#2D2A24]/70 font-medium">Program Participants</div>
+          </div>
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="120" data-suffix="+">0</div>
+            <div class="text-[#2D2A24]/70 font-medium">Workshops Delivered</div>
+          </div>
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="25" data-suffix="+">0</div>
+            <div class="text-[#2D2A24]/70 font-medium">Active Programs</div>
+          </div>
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="15" data-suffix="+">0</div>
+            <div class="text-[#2D2A24]/70 font-medium">Partner Organizations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories (carousel style) -->
+    <section class="py-section bg-[#F9F5F0] overflow-hidden">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Success Stories</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm card-hover">
+            <p class="italic text-[#2D2A24]/70 mb-4">"The youth mentorship program gave my son the confidence he needed. He's now thriving in school and making new friends."</p>
+            <p class="font-semibold">— Fatima, parent</p>
+          </div>
+          <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm card-hover">
+            <p class="italic text-[#2D2A24]/70 mb-4">"After attending the parenting workshops, I feel more equipped to handle challenges at home. Thank you OMCS!"</p>
+            <p class="font-semibold">— Ahmed, father</p>
+          </div>
+          <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm card-hover">
+            <p class="italic text-[#2D2A24]/70 mb-4">"The senior support group has become my second family. I look forward to our weekly gatherings."</p>
+            <p class="font-semibold">— Mariam, senior</p>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <a href="stories.html" class="inline-block bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">Read more stories</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section (program-related) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Program FAQs</h2>
+        <div class="space-y-4" id="faq">
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">Who can participate in your programs?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">Most programs are open to all, with some designed specifically for youth, families, or seniors. Check individual program details for eligibility.</p>
+            </div>
+          </div>
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">Are there any costs?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">Many programs are offered at low or no cost. For some workshops, a small fee may apply. Contact us for details.</p>
+            </div>
+          </div>
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">How do I register for a program?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">You can register by clicking "Learn more" on any program card and using the registration link, or by contacting us directly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Program Coordinator Card -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm border-l-4 border-[#C9A34B] text-center">
+          <h3 class="text-2xl font-display mb-3">📋 Have questions about our programs?</h3>
+          <p class="text-[#2D2A24]/70 mb-4">Our program coordinators are happy to help you find the right fit.</p>
+          <a href="contact.html" class="inline-block bg-[#0B4D3C] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1A6B4F] transition">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action: Get Involved -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-[#FEFCF8] rounded-2xl p-12 shadow-sm max-w-3xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Support Our Programs</h2>
+          <p class="text-lg mb-8">Your involvement helps us expand and sustain these vital services.</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="donate.html" class="bg-[#0B4D3C] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1A6B4F] transition shadow-md hover:shadow-lg">Donate Now</a>
+            <a href="volunteer.html" class="border-2 border-[#0B4D3C] text-[#0B4D3C] px-8 py-4 rounded-full font-semibold hover:bg-[#0B4D3C] hover:text-white transition">Volunteer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+            <li><a href="contact.html" class="hover:text-[#C9A34B]">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        © 2026 OMCS Counselling. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for filter, FAQ, counters -->
+  <script>
+    // Category filter
+    const filterButtons = document.querySelectorAll('#filter-buttons .category-tag');
+    const programCards = document.querySelectorAll('#program-cards .glass-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        // Update active class
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // Filter cards
+        programCards.forEach(card => {
+          const category = card.dataset.category;
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+
+    // Animated counters
+    const statsSection = document.getElementById('stats-section');
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    function animateNumber(el, target, suffix) {
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target + suffix;
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+      }, 20);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          statNumbers.forEach(el => {
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            animateNumber(el, target, suffix);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (statsSection) observer.observe(statsSection);
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

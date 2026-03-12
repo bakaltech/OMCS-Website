@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Volunteer</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .opportunity-card {
+      transition: all 0.3s ease;
+    }
+    .opportunity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    }
+    .badge {
+      display: inline-block;
+      background-color: rgba(201, 163, 75, 0.1);
+      color: #0B4D3C;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .team-image {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #C9A34B;
+      margin: 0 auto 1rem;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar (same as other pages, with Volunteer highlighted) -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="get-help.html" class="hover:text-[#C9A34B] transition">Get Help</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">Volunteer With Us</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80">Join a community of compassionate individuals dedicated to making a difference in Ottawa's Muslim community.</p>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl text-center">
+        <p class="text-lg text-[#2D2A24]/80 leading-relaxed">Volunteers are the heart of OMCS. Whether you're packing food hampers, mentoring youth, or helping at events, your time and skills create lasting impact. We welcome volunteers of all backgrounds and abilities – training is provided, and flexible schedules are available.</p>
+      </div>
+    </section>
+
+    <!-- Current Opportunities -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Current Opportunities</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Opportunity 1: Eid Hamper Packing -->
+          <div class="glass-card rounded-2xl p-6 opportunity-card">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-display">Eid Hamper Packing</h3>
+              <span class="badge">Seasonal</span>
+            </div>
+            <p class="text-sm text-[#2D2A24]/70 mb-3">📅 March – April (before Eid)</p>
+            <p class="text-sm text-[#2D2A24]/70 mb-4">Help assemble and deliver food hampers to families in need. Flexible shifts available.</p>
+            <a href="volunteer-apply.html?event=eid-hamper" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Sign Up →</a>
+          </div>
+
+          <!-- Opportunity 2: Community Iftar -->
+          <div class="glass-card rounded-2xl p-6 opportunity-card">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-display">Community Iftar</h3>
+              <span class="badge">Ramadan</span>
+            </div>
+            <p class="text-sm text-[#2D2A24]/70 mb-3">📅 Evenings during Ramadan</p>
+            <p class="text-sm text-[#2D2A24]/70 mb-4">Assist with setup, serving, and cleanup at our community iftars. Volunteer slots are 3–4 hours.</p>
+            <a href="volunteer-apply.html?event=iftar" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Sign Up →</a>
+          </div>
+
+          <!-- Opportunity 3: Youth Mentor -->
+          <div class="glass-card rounded-2xl p-6 opportunity-card">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-display">Youth Mentor</h3>
+              <span class="badge">Ongoing</span>
+            </div>
+            <p class="text-sm text-[#2D2A24]/70 mb-3">📅 Weekly, flexible timing</p>
+            <p class="text-sm text-[#2D2A24]/70 mb-4">Support a teen through our mentorship program. Commitment of 1 hour per week for 12 weeks.</p>
+            <a href="volunteer-apply.html?event=youth-mentor" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Apply →</a>
+          </div>
+
+          <!-- Opportunity 4: Event Setup Team -->
+          <div class="glass-card rounded-2xl p-6 opportunity-card">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-display">Event Setup Team</h3>
+              <span class="badge">As needed</span>
+            </div>
+            <p class="text-sm text-[#2D2A24]/70 mb-3">📅 Various dates</p>
+            <p class="text-sm text-[#2D2A24]/70 mb-4">Help with setting up and tearing down for community events, workshops, and gatherings.</p>
+            <a href="volunteer-apply.html?event=setup" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Sign Up →</a>
+          </div>
+
+          <!-- Opportunity 5: Food Sorting Assistant -->
+          <div class="glass-card rounded-2xl p-6 opportunity-card">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-display">Food Sorting Assistant</h3>
+              <span class="badge">Weekly</span>
+            </div>
+            <p class="text-sm text-[#2D2A24]/70 mb-3">📅 Tuesday mornings</p>
+            <p class="text-sm text-[#2D2A24]/70 mb-4">Sort and pack donated food items for distribution. Light lifting required.</p>
+            <a href="volunteer-apply.html?event=food-sort" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Sign Up →</a>
+          </div>
+
+          <!-- Opportunity 6: Administrative Support -->
+          <div class="glass-card rounded-2xl p-6 opportunity-card">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-display">Admin Support</h3>
+              <span class="badge">Flexible</span>
+            </div>
+            <p class="text-sm text-[#2D2A24]/70 mb-3">📅 Remote or in‑office</p>
+            <p class="text-sm text-[#2D2A24]/70 mb-4">Help with data entry, phone calls, and general office tasks. Training provided.</p>
+            <a href="volunteer-apply.html?event=admin" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Apply →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Volunteer? (Benefits) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Why Volunteer With OMCS?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Community</h3>
+            <p class="text-sm text-[#2D2A24]/70">Connect with like‑minded people and build lasting friendships.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Skill Development</h3>
+            <p class="text-sm text-[#2D2A24]/70">Gain valuable experience and training in various fields.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <svg class="w-12 h-12 text-[#C9A34B] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <h3 class="text-2xl font-display mb-2">Impact</h3>
+            <p class="text-sm text-[#2D2A24]/70">See the direct difference your time makes in families' lives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial from a Volunteer -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="glass-card rounded-2xl p-8">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Volunteer" class="w-16 h-16 rounded-full object-cover border-2 border-[#C9A34B]">
+            <div>
+              <p class="text-lg italic text-[#2D2A24]/80">"Volunteering at OMCS has been one of the most rewarding experiences. I've made friends, learned new skills, and seen firsthand how our work changes lives."</p>
+              <p class="font-semibold mt-2">— Fatima, volunteer since 2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer Application Form (simple) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <div class="glass-card rounded-2xl p-8">
+          <h2 class="text-3xl font-display text-center mb-6">Express Your Interest</h2>
+          <p class="text-center text-[#2D2A24]/70 mb-6">Not sure which role fits? Fill out this quick form and we'll get back to you within 2 business days.</p>
+          <form>
+            <div class="mb-4">
+              <label class="block mb-2 font-medium">Full Name</label>
+              <input type="text" class="w-full p-3 border border-[#E2D9CE] rounded-lg focus:border-[#C9A34B] focus:ring-2 focus:ring-[#C9A34B]/20">
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 font-medium">Email Address</label>
+              <input type="email" class="w-full p-3 border border-[#E2D9CE] rounded-lg focus:border-[#C9A34B] focus:ring-2 focus:ring-[#C9A34B]/20">
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 font-medium">Phone (optional)</label>
+              <input type="tel" class="w-full p-3 border border-[#E2D9CE] rounded-lg focus:border-[#C9A34B] focus:ring-2 focus:ring-[#C9A34B]/20">
+            </div>
+            <div class="mb-6">
+              <label class="block mb-2 font-medium">Area of Interest</label>
+              <select class="w-full p-3 border border-[#E2D9CE] rounded-lg focus:border-[#C9A34B] focus:ring-2 focus:ring-[#C9A34B]/20">
+                <option>Eid Hamper Packing</option>
+                <option>Community Iftar</option>
+                <option>Youth Mentor</option>
+                <option>Event Setup</option>
+                <option>Food Sorting</option>
+                <option>Administrative Support</option>
+                <option>Not sure / Tell me more</option>
+              </select>
+            </div>
+            <button type="submit" class="w-full bg-[#C9A34B] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E0C17C] transition">Submit</button>
+          </form>
+          <p class="text-xs text-center text-[#2D2A24]/60 mt-4">We'll contact you to discuss next steps.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action: Other Ways to Help -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white rounded-2xl p-12 shadow-lg">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Can't Volunteer Right Now?</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">You can still support our mission through donations, partnerships, or advocacy.</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="donate.html" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-lg">Donate</a>
+            <a href="get-involved.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Get Involved</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (with Bakal Digital credit) -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="get-help.html" class="hover:text-[#C9A34B]">Get Help</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        <div>© 2026 OMCS Counselling. All rights reserved.</div>
+        <div class="mt-3 text-white/70 font-medium">
+          Design & Development by 
+          <a href="https://bakaltech.github.io/bakal-digital/" target="_blank" rel="noopener" class="text-[#C9A34B] hover:text-white transition font-semibold">Bakal Digital</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional JS (none needed for now) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

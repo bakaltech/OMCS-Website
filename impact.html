@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Our Impact</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .stat-number {
+      transition: all 0.3s;
+    }
+    .timeline-line {
+      background: linear-gradient(to bottom, #C9A34B, #0B4D3C);
+    }
+    .timeline-item {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .timeline-item.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .chart-bar {
+      height: 8px;
+      background: linear-gradient(90deg, #C9A34B, #0B4D3C);
+      border-radius: 999px;
+      width: 0%;
+      transition: width 1.2s ease-out;
+    }
+    .chart-bar.animated {
+      width: var(--target-width);
+    }
+    /* Testimonial infinite carousel */
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testimonial-carousel {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+    .testimonial-track {
+      display: inline-flex;
+      gap: 1.5rem;
+      animation: scroll 60s linear infinite;
+      will-change: transform;
+    }
+    .testimonial-carousel:hover .testimonial-track {
+      animation-play-state: paused;
+    }
+    .testimonial-card {
+      width: 300px;
+      flex-shrink: 0;
+      white-space: normal;
+      background: #FEFCF8;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(201, 163, 75, 0.2);
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      border-color: #C9A34B;
+    }
+    @media (min-width: 768px) {
+      .testimonial-card {
+        width: 350px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar (consistent) -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="text-[#C9A34B] font-semibold">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">Our Impact</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80">Since 2000, OMCS has been transforming lives through culturally‑responsive services. See the difference we've made together.</p>
+      </div>
+    </section>
+
+    <!-- Key Impact Stats (animated counters) -->
+    <section class="py-section bg-[#F9F5F0]" id="stats-section">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">By the Numbers</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="25000" data-suffix="+">0</div>
+            <div class="text-[#2D2A24]/70 font-medium">Individuals Served</div>
+          </div>
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="15000" data-suffix="+">0</div>
+            <div class="text-[#2D2A24]/70 font-medium">Counselling Sessions</div>
+          </div>
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="500" data-suffix="+">0</div>
+            <div class="text-[#2D2A24]/70 font-medium">Workshops & Events</div>
+          </div>
+          <div class="bg-[#FEFCF8] rounded-2xl p-8 text-center shadow-sm border-t-4 border-[#C9A34B] card-hover">
+            <div class="text-5xl font-display font-bold text-[#0B4D3C] mb-2 stat-number" data-target="40" data-suffix="+">0</div>
+            <div class="text-[#2D2A24]/70 font-medium">Community Partners</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="py-section bg-[#F9F5F0] overflow-hidden">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Our Journey</h2>
+        <div class="relative max-w-4xl mx-auto">
+          <!-- vertical line -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-1 timeline-line h-full"></div>
+
+          <!-- Timeline items -->
+          <div class="space-y-12">
+            <!-- 2000 -->
+            <div class="timeline-item relative flex justify-start md:justify-end items-center w-full md:w-1/2 ml-0 md:ml-auto" data-view>
+              <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm glass-card w-full md:w-[90%]">
+                <span class="text-[#C9A34B] font-bold text-sm">2000</span>
+                <h3 class="text-2xl font-display mt-1">Foundation</h3>
+                <p class="text-[#2D2A24]/70 mt-2">OMCS begins its mission to support immigrant families and vulnerable communities in Ottawa.</p>
+              </div>
+            </div>
+            <!-- 2008 -->
+            <div class="timeline-item relative flex justify-start items-center w-full md:w-1/2" data-view>
+              <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm glass-card w-full md:w-[90%]">
+                <span class="text-[#C9A34B] font-bold text-sm">2008</span>
+                <h3 class="text-2xl font-display mt-1">Community Programs</h3>
+                <p class="text-[#2D2A24]/70 mt-2">Launch of youth mentorship and settlement programs, reaching hundreds of families.</p>
+              </div>
+            </div>
+            <!-- 2015 -->
+            <div class="timeline-item relative flex justify-start md:justify-end items-center w-full md:w-1/2 ml-0 md:ml-auto" data-view>
+              <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm glass-card w-full md:w-[90%]">
+                <span class="text-[#C9A34B] font-bold text-sm">2015</span>
+                <h3 class="text-2xl font-display mt-1">Mental Health Expansion</h3>
+                <p class="text-[#2D2A24]/70 mt-2">Expanded counselling and mental wellness services, adding trauma‑informed care.</p>
+              </div>
+            </div>
+            <!-- 2020 -->
+            <div class="timeline-item relative flex justify-start items-center w-full md:w-1/2" data-view>
+              <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm glass-card w-full md:w-[90%]">
+                <span class="text-[#C9A34B] font-bold text-sm">2020</span>
+                <h3 class="text-2xl font-display mt-1">Virtual Services</h3>
+                <p class="text-[#2D2A24]/70 mt-2">Rapidly adapted to offer online counselling and workshops during the pandemic.</p>
+              </div>
+            </div>
+            <!-- 2023 -->
+            <div class="timeline-item relative flex justify-start md:justify-end items-center w-full md:w-1/2 ml-0 md:ml-auto" data-view>
+              <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm glass-card w-full md:w-[90%]">
+                <span class="text-[#C9A34B] font-bold text-sm">2023</span>
+                <h3 class="text-2xl font-display mt-1">Growing Impact</h3>
+                <p class="text-[#2D2A24]/70 mt-2">Thousands of families supported across Ontario; new partnership with local health networks.</p>
+              </div>
+            </div>
+            <!-- 2025 -->
+            <div class="timeline-item relative flex justify-start items-center w-full md:w-1/2" data-view>
+              <div class="bg-[#FEFCF8] rounded-2xl p-6 shadow-sm glass-card w-full md:w-[90%]">
+                <span class="text-[#C9A34B] font-bold text-sm">2025</span>
+                <h3 class="text-2xl font-display mt-1">25th Anniversary</h3>
+                <p class="text-[#2D2A24]/70 mt-2">Celebrating 25 years of service with expanded programs and new community centre.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Delivery Stats (animated charts) -->
+    <section class="py-section bg-[#F9F5F0]" id="charts-section">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Service Delivery (2025)</h2>
+        <div class="space-y-6 glass-card rounded-2xl p-8">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Counselling sessions</span>
+              <span class="text-[#0B4D3C] font-semibold">1,500+</span>
+            </div>
+            <div class="w-full bg-[#E2D9CE] rounded-full h-2">
+              <div class="chart-bar" data-width="95" style="--target-width: 95%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Workshops delivered</span>
+              <span class="text-[#0B4D3C] font-semibold">85</span>
+            </div>
+            <div class="w-full bg-[#E2D9CE] rounded-full h-2">
+              <div class="chart-bar" data-width="85" style="--target-width: 85%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Youth mentorship matches</span>
+              <span class="text-[#0B4D3C] font-semibold">120</span>
+            </div>
+            <div class="w-full bg-[#E2D9CE] rounded-full h-2">
+              <div class="chart-bar" data-width="90" style="--target-width: 90%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Senior support participants</span>
+              <span class="text-[#0B4D3C] font-semibold">300+</span>
+            </div>
+            <div class="w-full bg-[#E2D9CE] rounded-full h-2">
+              <div class="chart-bar" data-width="80" style="--target-width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+        <p class="text-sm text-[#2D2A24]/60 text-center mt-4">* Based on 2025 projected data</p>
+      </div>
+    </section>
+
+    <!-- Testimonials – Infinite Horizontal Carousel -->
+    <section class="py-section bg-[#F9F5F0] overflow-hidden">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Community Voices</h2>
+        <div class="testimonial-carousel">
+          <div class="testimonial-track">
+            <!-- First set of testimonials (12 cards) -->
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The counselling I received at OMCS changed my life. For the first time, I felt truly understood by someone who shared my cultural background.</p>
+              <p class="font-semibold">— Amina, client</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">As a newcomer, the settlement program helped me find housing and a job within months. I'm now able to support my family thanks to OMCS.</p>
+              <p class="font-semibold">— Khalid, newcomer</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The youth mentorship program gave my son confidence and a positive role model. He's now applying for university!</p>
+              <p class="font-semibold">— Fatima, parent</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">Volunteering at OMCS has been the most rewarding experience. I've made friends and helped my community.</p>
+              <p class="font-semibold">— Sami, volunteer</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The parenting workshops gave me tools I use every day. My relationship with my children has never been better.</p>
+              <p class="font-semibold">— Layla, mother</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">I came to Canada with nothing. OMCS helped me find a job, a home, and a community. I am forever grateful.</p>
+              <p class="font-semibold">— Ahmed, newcomer</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The senior support group has become my second family. I look forward to our weekly gatherings.</p>
+              <p class="font-semibold">— Mariam, senior</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">After struggling with anxiety for years, the culturally sensitive therapy at OMCS helped me find peace.</p>
+              <p class="font-semibold">— Omar, client</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The addiction support group saved my life. I'm now two years sober and mentoring others.</p>
+              <p class="font-semibold">— Yusuf, client</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">OMCS's community events made me feel welcome in Ottawa. I've met lifelong friends.</p>
+              <p class="font-semibold">— Nadia, attendee</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">As a volunteer, I've seen firsthand how OMCS changes lives. Proud to be part of this team.</p>
+              <p class="font-semibold">— Zaynab, volunteer</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The family counselling helped us communicate better and heal old wounds. Thank you, OMCS.</p>
+              <p class="font-semibold">— The Hassan family</p>
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The counselling I received at OMCS changed my life. For the first time, I felt truly understood by someone who shared my cultural background.</p>
+              <p class="font-semibold">— Amina, client</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">As a newcomer, the settlement program helped me find housing and a job within months. I'm now able to support my family thanks to OMCS.</p>
+              <p class="font-semibold">— Khalid, newcomer</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The youth mentorship program gave my son confidence and a positive role model. He's now applying for university!</p>
+              <p class="font-semibold">— Fatima, parent</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">Volunteering at OMCS has been the most rewarding experience. I've made friends and helped my community.</p>
+              <p class="font-semibold">— Sami, volunteer</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The parenting workshops gave me tools I use every day. My relationship with my children has never been better.</p>
+              <p class="font-semibold">— Layla, mother</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">I came to Canada with nothing. OMCS helped me find a job, a home, and a community. I am forever grateful.</p>
+              <p class="font-semibold">— Ahmed, newcomer</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The senior support group has become my second family. I look forward to our weekly gatherings.</p>
+              <p class="font-semibold">— Mariam, senior</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">After struggling with anxiety for years, the culturally sensitive therapy at OMCS helped me find peace.</p>
+              <p class="font-semibold">— Omar, client</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The addiction support group saved my life. I'm now two years sober and mentoring others.</p>
+              <p class="font-semibold">— Yusuf, client</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">OMCS's community events made me feel welcome in Ottawa. I've met lifelong friends.</p>
+              <p class="font-semibold">— Nadia, attendee</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">As a volunteer, I've seen firsthand how OMCS changes lives. Proud to be part of this team.</p>
+              <p class="font-semibold">— Zaynab, volunteer</p>
+            </div>
+            <div class="testimonial-card">
+              <svg class="w-8 h-8 text-[#C9A34B] mb-4" fill="currentColor" viewBox="0 0 24 24">“</svg>
+              <p class="text-[#2D2A24]/80 italic mb-4">The family counselling helped us communicate better and heal old wounds. Thank you, OMCS.</p>
+              <p class="font-semibold">— The Hassan family</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Annual Report CTA with downloadable PDF -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-[#FEFCF8] rounded-2xl p-12 shadow-sm max-w-3xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Read Our Annual Report</h2>
+          <p class="text-lg mb-8">See detailed metrics, financials, and stories from the past year.</p>
+          <a href="/reports/OMCS-Annual-Report-2025.pdf" download class="inline-block bg-[#0B4D3C] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1A6B4F] transition shadow-md hover:shadow-lg">Download PDF</a>
+          <p class="text-sm text-[#2D2A24]/60 mt-4">(Sample file – replace with actual report)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support CTA -->
+    <section class="py-section bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-display mb-4">Help Us Make a Greater Impact</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Your donation helps us reach more families and expand our programs.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="donate.html" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition">Donate Now</a>
+          <a href="get-involved.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Get Involved</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (consistent) -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+            <li><a href="contact.html" class="hover:text-[#C9A34B]">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        © 2026 OMCS Counselling. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for counters, timeline, charts -->
+  <script>
+    // Animated counters
+    const statsSection = document.getElementById('stats-section');
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    function animateNumber(el, target, suffix) {
+      let current = 0;
+      const increment = target / 60;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target + suffix;
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+      }, 20);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          statNumbers.forEach(el => {
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            animateNumber(el, target, suffix);
+          });
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (statsSection) counterObserver.observe(statsSection);
+
+    // Timeline reveal
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    timelineItems.forEach(item => timelineObserver.observe(item));
+
+    // Animated charts
+    const chartsSection = document.getElementById('charts-section');
+    const chartBars = document.querySelectorAll('.chart-bar');
+    
+    const chartObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          chartBars.forEach(bar => {
+            bar.classList.add('animated');
+          });
+          chartObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (chartsSection) chartObserver.observe(chartsSection);
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Counselling Services</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .therapist-card {
+      transition: all 0.3s ease;
+    }
+    .therapist-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    }
+    .tag {
+      display: inline-block;
+      background-color: rgba(201, 163, 75, 0.1);
+      color: #0B4D3C;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 0.25rem;
+    }
+    .area-list {
+      max-height: 120px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+    .area-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    .area-list::-webkit-scrollbar-track {
+      background: #E2D9CE;
+    }
+    .area-list::-webkit-scrollbar-thumb {
+      background: #C9A34B;
+      border-radius: 4px;
+    }
+    .profile-image-large {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 1rem;
+      border: 3px solid #C9A34B;
+    }
+    /* FAQ accordion */
+    .faq-question {
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px; /* Adjust based on content */
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+    /* Glass card effect */
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="text-[#C9A34B] font-semibold">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">OMCS Counselling</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80 mb-8">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9FGDbrKfcUgavl9SrNFCVFE-wu3Fx8p47LwdAVHMKTNgIcw/viewform" target="_blank" rel="noopener" class="inline-block bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-md hover:shadow-lg">Fill out the intake form</a>
+      </div>
+    </section>
+
+    <!-- Therapist Profiles - Horizontal Layout (unchanged) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 space-y-8">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Meet Our Therapists</h2>
+        
+        <!-- Therapist: Samoon Tasmim -->
+        <div class="therapist-card bg-[#FEFCF8] rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 items-start">
+          <!-- Left: Large Image -->
+          <div class="md:w-1/3 flex-shrink-0">
+            <img src="assets/Samoon Tasmim.jpg" alt="Samoon Tasmim" class="profile-image-large">
+          </div>
+          <!-- Right: Details -->
+          <div class="md:w-2/3 flex flex-col">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-3xl font-display">Samoon Tasmim</h3>
+                <p class="text-[#0B4D3C] font-semibold">MA, PhD, RP · Program Advisor</p>
+              </div>
+              <span class="bg-[#C9A34B]/20 text-[#0B4D3C] px-3 py-1 rounded-full text-sm whitespace-nowrap">Online & In‑person</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+              <div>
+                <p class="font-semibold text-[#0B4D3C]">🗣️ Speaks</p>
+                <p>English, Pashto, Dari/Farsi, Urdu/Hindi</p>
+              </div>
+              <div>
+                <p class="font-semibold text-[#0B4D3C]">👥 Works with</p>
+                <p>teens, adults, individuals, couples, families</p>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p class="font-semibold text-[#0B4D3C] text-sm mb-2">📚 Modalities</p>
+              <div class="flex flex-wrap">
+                <span class="tag">Narrative</span>
+                <span class="tag">Psychodynamic</span>
+                <span class="tag">Trauma-informed</span>
+                <span class="tag">EFT</span>
+                <span class="tag">Attachment-based</span>
+                <span class="tag">Schema therapy</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p class="font-semibold text-[#0B4D3C] text-sm mb-2">🩺 Areas of support</p>
+              <div class="area-list text-xs grid grid-cols-2 gap-1">
+                <span>Trauma/PTSD</span><span>Grief</span><span>Anxiety</span>
+                <span>Anger management</span><span>Attachment issues</span>
+                <span>Cultural/identity issues</span><span>Depression</span>
+                <span>Life transitions</span><span>Men's issues</span>
+                <span>Parenting</span><span>Relationship issues</span>
+                <span>Spirituality</span><span>Stress</span>
+              </div>
+            </div>
+
+            <!-- Refined buttons -->
+            <div class="flex flex-wrap gap-3 mt-auto">
+              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2fftmhIZjCq2NxeLIq42BgBc_2YM41fQmrBw-ztUstvA5lg8rkhV4gUNzGZgeRbyKZhbJr17w2" target="_blank" rel="noopener" class="bg-[#0B4D3C] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition shadow-sm">📅 Book Online</a>
+              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0tMXAaPsP_Oqx-IWOP-XRUSY4d6SN7HV6KODUJgjSgszVpCORCeI0gDZqO3BvcwgrRaFcZD1Ny" target="_blank" rel="noopener" class="bg-[#C9A34B] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition shadow-sm">📍 Book In‑person</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Therapist: Berak Hussain -->
+        <div class="therapist-card bg-[#FEFCF8] rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 items-start">
+          <div class="md:w-1/3 flex-shrink-0">
+            <img src="assets/Berak Hussain.jpeg" alt="Berak Hussain" class="profile-image-large">
+          </div>
+          <div class="md:w-2/3 flex flex-col">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-3xl font-display">Berak Hussain</h3>
+                <p class="text-[#0B4D3C] font-semibold">BA Honors, MEd, RP</p>
+              </div>
+              <span class="bg-[#C9A34B]/20 text-[#0B4D3C] px-3 py-1 rounded-full text-sm whitespace-nowrap">Online & In‑person</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+              <div>
+                <p class="font-semibold text-[#0B4D3C]">🗣️ Speaks</p>
+                <p>English, Arabic, French</p>
+              </div>
+              <div>
+                <p class="font-semibold text-[#0B4D3C]">👥 Works with</p>
+                <p>Teens (17+), individuals, families, groups</p>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p class="font-semibold text-[#0B4D3C] text-sm mb-2">📚 Modalities</p>
+              <div class="flex flex-wrap max-h-24 overflow-y-auto">
+                <span class="tag">CBT</span><span class="tag">Attachment-based</span>
+                <span class="tag">Culturally-sensitive</span><span class="tag">Emotion-focused</span>
+                <span class="tag">Existential</span><span class="tag">Family systems</span>
+                <span class="tag">Humanistic</span><span class="tag">Integrative</span>
+                <span class="tag">Motivational interviewing</span><span class="tag">Multicultural</span>
+                <span class="tag">Positive psychology</span><span class="tag">Strength-based</span>
+                <span class="tag">Trauma-focused</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p class="font-semibold text-[#0B4D3C] text-sm mb-2">🩺 Areas of support</p>
+              <div class="area-list text-xs grid grid-cols-2 gap-1">
+                <span>Anger management</span><span>Anxiety</span><span>Behavioral issues</span>
+                <span>Depression</span><span>Divorce</span><span>Domestic violence</span>
+                <span>Emotional disturbance</span><span>Family conflict</span><span>Grief</span>
+                <span>Life transitions</span><span>Marital/premarital</span><span>NPD</span>
+                <span>Parenting</span><span>Personality disorders</span><span>Racial identity</span>
+                <span>Relationship issues</span><span>School issues</span><span>Self-esteem</span>
+                <span>Self-harm</span><span>Sexual abuse</span><span>Spirituality</span>
+                <span>Stress</span><span>Suicidal ideation</span><span>Trauma/PTSD</span>
+                <span>Women's issues</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3 mt-auto">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9FGDbrKfcUgavl9SrNFCVFE-wu3Fx8p47LwdAVHMKTNgIcw/viewform" target="_blank" rel="noopener" class="bg-[#0B4D3C] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition shadow-sm">📅 Book Online</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9FGDbrKfcUgavl9SrNFCVFE-wu3Fx8p47LwdAVHMKTNgIcw/viewform" target="_blank" rel="noopener" class="bg-[#C9A34B] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition shadow-sm">📍 Book In‑person</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Therapist: Buraidah Razack -->
+        <div class="therapist-card bg-[#FEFCF8] rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-6 items-start">
+          <div class="md:w-1/3 flex-shrink-0">
+            <img src="assets/Buraidah Razack.jpg" alt="Buraidah Razack" class="profile-image-large">
+          </div>
+          <div class="md:w-2/3 flex flex-col">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-3xl font-display">Buraidah Razack</h3>
+                <p class="text-[#0B4D3C] font-semibold">BA, MSW (in progress) · Social worker in training</p>
+              </div>
+              <span class="bg-[#C9A34B]/20 text-[#0B4D3C] px-3 py-1 rounded-full text-sm whitespace-nowrap">Online & In‑person</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-4 text-sm">
+              <div>
+                <p class="font-semibold text-[#0B4D3C]">🗣️ Speaks</p>
+                <p>English, Thai, Arabic (beginner)</p>
+              </div>
+              <div>
+                <p class="font-semibold text-[#0B4D3C]">👥 Works with</p>
+                <p>children, teens, adults, families</p>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p class="font-semibold text-[#0B4D3C] text-sm mb-2">📚 Modalities</p>
+              <div class="flex flex-wrap max-h-24 overflow-y-auto">
+                <span class="tag">Transactional analysis</span><span class="tag">Compassion-focused</span>
+                <span class="tag">Culturally-sensitive</span><span class="tag">Faith-centered</span>
+                <span class="tag">Integrative</span><span class="tag">Motivational interviewing</span>
+                <span class="tag">Multicultural</span><span class="tag">Narrative</span>
+                <span class="tag">Person-centered</span><span class="tag">Psychodynamic</span>
+                <span class="tag">Strength-based</span><span class="tag">Trauma-focused</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p class="font-semibold text-[#0B4D3C] text-sm mb-2">🩺 Areas of support</p>
+              <div class="area-list text-xs grid grid-cols-2 gap-1">
+                <span>Anxiety</span><span>Addiction</span><span>Career guidance</span>
+                <span>Coping skills</span><span>Anger management</span><span>Peer relationships</span>
+                <span>Academic/school issues</span><span>PTSD</span><span>Parenting</span>
+                <span>Spirituality</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3 mt-auto">
+              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3BchDeRoipXPji2IVsZFk_Gkj53gEqZUuRoJxxClsV3gTxF_gh_7wCBQ2sSRCKVTbw1yy7m1Ql" target="_blank" rel="noopener" class="bg-[#0B4D3C] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition shadow-sm">📅 Book Online</a>
+              <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1skN86X7N291fbRDOxUeDdtbfZkzxGRtJYYSTcWCdzFg9_9PnNnaiZOBzImCrkBBV_8gE_a-tc" target="_blank" rel="noopener" class="bg-[#C9A34B] text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition shadow-sm">📍 Book In‑person</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works – with glass cards (unchanged) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">How It Works</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <span class="text-5xl text-[#C9A34B] font-display block mb-4">1</span>
+            <h3 class="text-2xl font-display mb-3">Book a Session</h3>
+            <p class="text-[#2D2A24]/70">Choose a therapist and book online or in‑person using the calendar links above.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <span class="text-5xl text-[#C9A34B] font-display block mb-4">2</span>
+            <h3 class="text-2xl font-display mb-3">Meet Your Therapist</h3>
+            <p class="text-[#2D2A24]/70">Connect in a safe, confidential space – virtually or at our Ottawa office.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center">
+            <span class="text-5xl text-[#C9A34B] font-display block mb-4">3</span>
+            <h3 class="text-2xl font-display mb-3">Begin Your Journey</h3>
+            <p class="text-[#2D2A24]/70">Work together on your goals with culturally‑sensitive, evidence‑based care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Culturally-Responsive Therapy? – with updated icons (unchanged) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <div class="bg-gradient-to-br from-[#0B4D3C] to-[#1A6B4F] text-white rounded-3xl p-12 shadow-lg">
+          <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-display mb-6">Therapy That Understands You</h2>
+            <p class="text-xl mb-6">Our therapists are trained to integrate your cultural, spiritual, and personal values into every session. We believe healing happens when you feel truly seen and respected.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              <!-- Faith‑sensitive – mosque icon -->
+              <div class="glass-card rounded-xl p-4 flex flex-col items-center">
+                <svg class="w-8 h-8 text-[#C9A34B] mb-2" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13 3a2 2 0 1 0 1.7 3A3 3 0 0 1 13 3z"/>
+                  <rect x="3" y="7" width="2.2" height="11" rx="0.4"/>
+                  <rect x="2.6" y="5.5" width="3" height="1.6" rx="0.4"/>
+                  <path d="M12 6c3.5 0 6 2.3 6 5v1H6v-1c0-2.7 2.5-5 6-5z"/>
+                  <rect x="6" y="12" width="12" height="6" rx="0.8"/>
+                  <rect x="8" y="13.5" width="1.6" height="2.6" rx="0.4"/>
+                  <rect x="11.2" y="13.5" width="1.6" height="2.6" rx="0.4"/>
+                  <rect x="14.4" y="13.5" width="1.6" height="2.6" rx="0.4"/>
+                </svg>
+                <p class="text-sm">Faith‑sensitive</p>
+              </div>
+              <!-- Multilingual – Arabic & English letters -->
+              <div class="glass-card rounded-xl p-4 flex flex-col items-center">
+                <svg class="w-8 h-8 text-[#C9A34B] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <text x="4" y="16" font-family="Arial" font-size="12" fill="currentColor">A</text>
+                  <text x="14" y="16" font-family="Arial" font-size="12" fill="currentColor">ع</text>
+                </svg>
+                <p class="text-sm">Multilingual</p>
+              </div>
+              <!-- Community‑oriented -->
+              <div class="glass-card rounded-xl p-4 flex flex-col items-center">
+                <svg class="w-8 h-8 text-[#C9A34B] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+                <p class="text-sm">Community‑oriented</p>
+              </div>
+              <!-- Trauma‑informed – heart icon -->
+              <div class="glass-card rounded-xl p-4 flex flex-col items-center">
+                <svg class="w-8 h-8 text-[#C9A34B] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+                <p class="text-sm">Trauma‑informed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (Accordion) – UPDATED with more questions and cost answer changed -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Frequently Asked Questions</h2>
+        <div class="space-y-4" id="faq">
+          <!-- FAQ 1 -->
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">What can I expect in my first session?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">Your first session is an opportunity to get to know your therapist and share what brings you to counselling. We'll discuss your goals, any concerns, and how we can best support you.</p>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">Is counselling confidential?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">Absolutely. All sessions are confidential within the limits of the law (e.g., risk of harm). We prioritise your privacy and safety.</p>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">Do you accept insurance?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">We provide receipts that you can submit to your insurance provider. Please check with your plan for coverage details.</p>
+            </div>
+          </div>
+          <!-- FAQ 4 (new) -->
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">How long are sessions?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">Typical sessions are 50 minutes, but we can discuss your needs and adjust accordingly.</p>
+            </div>
+          </div>
+          <!-- FAQ 5 (new) -->
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">Do you offer virtual sessions?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">Yes, all therapists offer online sessions via secure video. You can choose online or in‑person when booking.</p>
+            </div>
+          </div>
+          <!-- FAQ 6 (new) -->
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">How do I choose the right therapist?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">You can read our therapists' profiles above. Many offer a free 15‑minute consultation to help you decide who feels right for you.</p>
+            </div>
+          </div>
+          <!-- FAQ 7 (updated – no specific pricing numbers) -->
+          <div class="faq-item bg-[#FEFCF8] rounded-xl shadow-sm overflow-hidden">
+            <div class="faq-question flex justify-between items-center p-5 cursor-pointer">
+              <h3 class="text-lg font-semibold">What is the cost per session?</h3>
+              <span class="faq-toggle text-2xl text-[#C9A34B] transition-transform">+</span>
+            </div>
+            <div class="faq-answer px-5 pb-0">
+              <p class="pb-5 text-[#2D2A24]/70">Our fees are competitive and we offer a sliding scale based on financial need. Please contact us for more information.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Confidentiality & Privacy – reduced spacing -->
+    <section class="pt-8 pb-12 bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="bg-[#FEFCF8] rounded-2xl p-8 shadow-sm border-l-4 border-[#C9A34B]">
+          <h3 class="text-2xl font-display mb-3">🔒 Your privacy is our priority</h3>
+          <p class="text-[#2D2A24]/70">All sessions are confidential. We adhere to strict professional ethics and privacy laws. You can speak freely.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Client CTA – reduced top spacing -->
+    <section class="pt-4 pb-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-[#FEFCF8] rounded-2xl p-12 shadow-sm max-w-3xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Are you a new client?</h2>
+          <p class="text-lg mb-8">Get started by filling out our intake form. We'll match you with the right therapist.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9FGDbrKfcUgavl9SrNFCVFE-wu3Fx8p47LwdAVHMKTNgIcw/viewform" target="_blank" rel="noopener" class="inline-block bg-[#0B4D3C] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1A6B4F] transition shadow-md hover:shadow-lg">Fill out the intake form</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questions (unchanged) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-display mb-4">Have questions?</h2>
+        <p class="text-lg mb-4">Email us at <a href="mailto:counselling@omcs.ca" class="text-[#0B4D3C] font-semibold hover:text-[#C9A34B] underline underline-offset-2">counselling@omcs.ca</a> and we'll get back to you within 24 hours.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (unchanged) -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+            <li><a href="contact.html" class="hover:text-[#C9A34B]">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        © 2026 OMCS Counselling. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAQ Accordion JavaScript -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+
+  <!-- Your main.js (counters, parallax) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

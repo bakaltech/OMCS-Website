@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMCS – Events</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glass-card {
+      background: rgba(254, 252, 248, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 163, 75, 0.2);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      background: rgba(254, 252, 248, 0.9);
+      border-color: #C9A34B;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+    }
+    .event-date-badge {
+      background-color: #C9A34B;
+      color: white;
+      font-weight: 600;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      display: inline-block;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body class="bg-[#F9F5F0]">
+
+  <!-- Navbar (consistent) -->
+  <nav class="bg-[#0B4D3C] text-white sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-display font-bold">OMCS</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="about.html" class="hover:text-[#C9A34B] transition">About</a>
+        <a href="programs.html" class="hover:text-[#C9A34B] transition">Programs</a>
+        <a href="counselling.html" class="hover:text-[#C9A34B] transition">Counselling</a>
+        <a href="impact.html" class="hover:text-[#C9A34B] transition">Impact</a>
+        <a href="stories.html" class="hover:text-[#C9A34B] transition">Stories</a>
+        <a href="get-involved.html" class="hover:text-[#C9A34B] transition">Get Involved</a>
+        <a href="contact.html" class="hover:text-[#C9A34B] transition">Contact</a>
+      </div>
+      <a href="donate.html" class="bg-[#C9A34B] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#E0C17C] transition">Donate</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[#0B4D3C] text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold mb-4">Events</h1>
+        <p class="text-xl max-w-2xl mx-auto text-white/80">Join us for community gatherings, workshops, and special celebrations. Everyone is welcome.</p>
+      </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-12">Upcoming Events</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Event 1: Eid Hamper Packing -->
+          <div class="glass-card rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Eid hamper" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="event-date-badge mb-3">March 25, 2025</span>
+              <h3 class="text-2xl font-display mb-2">Eid Hamper Packing</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-3">10:00 AM – 2:00 PM • OMCS Office</p>
+              <p class="text-[#2D2A24]/70 mb-4">Help us assemble and deliver Eid hampers to families in need. Volunteers are needed for packing, wrapping, and delivery.</p>
+              <a href="volunteer.html?event=eid-hamper" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Sign Up to Volunteer</a>
+            </div>
+          </div>
+
+          <!-- Event 2: Community Iftar -->
+          <div class="glass-card rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Iftar gathering" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="event-date-badge mb-3">April 10, 2025</span>
+              <h3 class="text-2xl font-display mb-2">Community Iftar</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-3">7:00 PM – 9:00 PM • Ottawa Mosque</p>
+              <p class="text-[#2D2A24]/70 mb-4">Join us for a community iftar open to all. Celebrate Ramadan together, enjoy a meal, and connect with neighbours. Volunteers are welcome to help with setup and serving.</p>
+              <a href="volunteer.html?event=iftar" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Sign Up to Volunteer</a>
+            </div>
+          </div>
+
+          <!-- Event 3: Youth Leadership Workshop -->
+          <div class="glass-card rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1529333320936-e2193f4e3b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Youth workshop" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="event-date-badge mb-3">May 5, 2025</span>
+              <h3 class="text-2xl font-display mb-2">Youth Leadership Workshop</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-3">1:00 PM – 4:00 PM • OMCS Office</p>
+              <p class="text-[#2D2A24]/70 mb-4">A free workshop for teens to develop leadership skills, build confidence, and connect with mentors. Snacks provided.</p>
+              <a href="#" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Register Now</a>
+            </div>
+          </div>
+
+          <!-- Event 4: Mental Health Awareness Session -->
+          <div class="glass-card rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1594708767771-a4f9e5a1c6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mental health session" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="event-date-badge mb-3">June 12, 2025</span>
+              <h3 class="text-2xl font-display mb-2">Mental Health Awareness Session</h3>
+              <p class="text-sm text-[#2D2A24]/70 mb-3">6:30 PM – 8:00 PM • Online (Zoom)</p>
+              <p class="text-[#2D2A24]/70 mb-4">Learn about common mental health challenges, coping strategies, and available resources. Led by OMCS therapists.</p>
+              <a href="#" class="inline-block bg-[#0B4D3C] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#1A6B4F] transition">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Events (collapsible section) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-display text-center mb-8">Past Events</h2>
+        <p class="text-center text-[#2D2A24]/70 mb-12">Relive some of our favourite moments.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Past Event 1: Ramadan Food Drive 2024 -->
+          <div class="glass-card rounded-2xl overflow-hidden opacity-80 hover:opacity-100 transition">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ramadan food drive" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-[#C9A34B] font-semibold">April 2024</span>
+              <h3 class="text-2xl font-display mb-2">Ramadan Food Drive</h3>
+              <p class="text-sm text-[#2D2A24]/70">Collected and distributed 500+ food hampers to families in need.</p>
+            </div>
+          </div>
+          <!-- Past Event 2: Eid al-Adha Celebration 2024 -->
+          <div class="glass-card rounded-2xl overflow-hidden opacity-80 hover:opacity-100 transition">
+            <img src="https://images.unsplash.com/photo-1591604466107-ec97e577daf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Eid celebration" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-[#C9A34B] font-semibold">July 2024</span>
+              <h3 class="text-2xl font-display mb-2">Eid al-Adha Celebration</h3>
+              <p class="text-sm text-[#2D2A24]/70">Community gathering with food, games, and activities for families.</p>
+            </div>
+          </div>
+          <!-- Past Event 3: Newcomer Settlement Workshop -->
+          <div class="glass-card rounded-2xl overflow-hidden opacity-80 hover:opacity-100 transition">
+            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Settlement workshop" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-[#C9A34B] font-semibold">September 2024</span>
+              <h3 class="text-2xl font-display mb-2">Newcomer Settlement Workshop</h3>
+              <p class="text-sm text-[#2D2A24]/70">Helped 50+ newcomers with housing, employment, and language resources.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action: Donate & Get Involved (UPDATED) -->
+    <section class="py-section bg-[#F9F5F0]">
+      <div class="container mx-auto px-4 text-center">
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#1A6B4F] text-white rounded-2xl p-12 shadow-lg">
+          <h2 class="text-4xl md:text-5xl font-display mb-4">Support Our Events</h2>
+          <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Your donations and involvement make these gatherings possible. Help us bring the community together.</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="donate.html" class="bg-[#C9A34B] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#E0C17C] transition shadow-lg">Donate</a>
+            <a href="get-involved.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0B4D3C] transition">Get Involved</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (consistent) -->
+  <footer class="bg-[#2D2A24] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-display mb-4">OMCS Counselling</h3>
+          <p class="text-sm text-white/70">Culturally-responsive counselling and psychotherapy that sets you up for success.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="about.html" class="hover:text-[#C9A34B]">About</a></li>
+            <li><a href="programs.html" class="hover:text-[#C9A34B]">Programs</a></li>
+            <li><a href="counselling.html" class="hover:text-[#C9A34B]">Counselling</a></li>
+            <li><a href="contact.html" class="hover:text-[#C9A34B]">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li>Email: info@omcs.ca</li>
+            <li>Phone: 613-626-1141</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/613MCS" target="_blank" class="text-white/70 hover:text-[#C9A34B]">FB</a>
+            <a href="https://www.instagram.com/ottawamuslimcommunityservices/" target="_blank" class="text-white/70 hover:text-[#C9A34B]">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
+        © 2026 OMCS Counselling. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
